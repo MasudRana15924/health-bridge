@@ -9,7 +9,7 @@ export const resetPassword = createAsyncThunk(
             const response = await publicPut(`/password/reset/${token}`, data);
             return response;
         } catch (err) {
-            return rejectWithValue(err);
+            return rejectWithValue(err.response.data.message);
         }
     }
 );
@@ -20,8 +20,7 @@ export const resetPasswordSlice = createSlice({
         resetPassword: [],
         isLoading: false,
         success: false,
-        error: false,
-        errorMessage: "",
+        error: '',
     },
 
     extraReducers: (builder) => {
@@ -36,8 +35,9 @@ export const resetPasswordSlice = createSlice({
         });
         builder.addCase(resetPassword.rejected, (state, action) => {
             state.isLoading = false;
-            state.error = true;
-            state.errorMessage = action.payload.data.message;
+            state.error = action.payload;
+            state.success = false;
+            // state.errorMessage = action.payload.data.message;
         });
     },
 });

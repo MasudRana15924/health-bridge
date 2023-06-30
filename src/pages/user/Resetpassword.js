@@ -5,12 +5,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { resetPassword } from '../../state/user/forgotpassword/resetPasswordSlice';
 import { useEffect } from 'react';
+import { Alert } from '@mui/material';
 
 const Resetpassword = () => {
     const navigate = useNavigate();
     const { token} = useParams()
     const dispatch = useDispatch();
-    const { success,error } = useSelector(state => state.resetPassword.resetPassword);
+    const { success,error } = useSelector(state => state.resetPassword);
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -30,7 +31,7 @@ const Resetpassword = () => {
                 theme: "dark",
             },
             );
-         
+         console.log("data",data);
         } else {
             toast.error('Please Enter Email', {
                 position: "top-right",
@@ -46,18 +47,18 @@ const Resetpassword = () => {
     };
     
   useEffect(() => {
-    if (error) {
-      alert.error(error);
-    }
     if (success) {
         navigate("/user-signin");
     }
-  }, [dispatch, error,success,navigate]);
+  }, [dispatch,success,navigate]);
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            <div className="w-full max-w-md">
+        <div className="flex flex-col items-center justify-center mt-24 lg:mt-44 ">
+            <div className="w-full p-5 max-w-md">
                 <div className="bg-white rounded-lg shadow-lg p-8">
-                    <h2 className="mt-5 mb-5 text-4xl font-medium  text-start ">Reset Password</h2>
+                <h2 className="mt-5 mb-5 lg:text-3xl font-medium  text-start ">Reset Password</h2>
+                    {
+                            error ?    <Alert severity="error" className="mt-5 mb-5">{error}</Alert>:null
+                        }
                     <form onSubmit={registerSubmit} className="mt-10 mb-10">
 
                         <div className="mb-4">
@@ -78,7 +79,7 @@ const Resetpassword = () => {
                                 required
                             />
                         </div>
-                        <button className=" text-white py-1 w-full  font-semibold h-10 bg-black" type="submit">Update</button>
+                        <button className=" text-white py-1 w-full  font-semibold h-10 bg-blue-500" type="submit">Update</button>
 
                     </form>
                 </div>

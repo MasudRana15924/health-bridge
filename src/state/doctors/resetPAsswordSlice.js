@@ -37,7 +37,7 @@ export const doctorResetPasswordSlice = createSlice({
         builder.addCase(doctorResetPassword.rejected, (state, action) => {
             state.isLoading = false;
             state.error =action.payload;
-            state.success=true
+            state.success=false
         });
     },
 });
