@@ -42,10 +42,10 @@ const Nurses = () => {
         content = nurses.slice(0, visible).map(nurse => <Nurse key={nurse._id} nurse={nurse} />)
     }
     return (
-        <section id="#nurses" className="doctors-section pt-12 mb-10 md:mt-24 lg:mt-24">
-            <div className="mt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
-                <h1 className="font-bold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
-                <div >
+        <section id="#nurses" className="doctors-section mb-10 md:mt-24 lg:mt-24">
+            <div className="mt-12 lg:pt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
+                <h1 className="text-start ml-5 lg:ml-0 lg:font-bold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
+                <div className="hidden">
                     {locations?.map((exp) => (
 
                         <button
@@ -64,7 +64,7 @@ const Nurses = () => {
 
                 <div className="col-span-12 ">
                     {visible && (nurses?.length > 0 && (
-                        <button onClick={loadMore} className="btn btn-sm bg-violet-600 border-violet-600 mx-auto mt-5 mb-10">Load More</button>
+                        <button onClick={loadMore} className="btn btn-sm bg-violet-600 border-violet-600 mx-auto  mb-5">Load More</button>
                     ))
                     }
                 </div>

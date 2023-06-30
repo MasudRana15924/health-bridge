@@ -7,9 +7,9 @@ const Insurances = () => {
  
   
     return (
-        <div className="blogs  md:mt-48 lg:mt-48 mb-10">
-            <p className="text-2xl md:text-4xl lg:text-4xl font-bold pt-12">The importance of health insurance </p>
-            <div className="w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+        <div className="blogs  md:mt-48 lg:mt-24 mb-5">
+            <p className="text-2xl md:text-4xl lg:text-4xl lg:font-bold pt-5 lg:pt-12">The importance of health insurance </p>
+            <div className="lg:w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 ">
                 <div className="mt-5 lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
                     <div className=" bg-white">
                         <img src={fight} alt="find" className=" h-40 md:h-48 lg:h-48 w-3/4 mx-auto pt-5" />
@@ -35,7 +35,7 @@ const Insurances = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
+                <div className="hidden lg:block lg:mt-20 lg:mb-20 md:mt-20 md:mb-20">
                     <div className=" bg-white">
                     <img src={savings} alt="find" className=" h-40 md:h-48 lg:h-48  w-3/4 mx-auto pt-5" />
                         <div className="card-body">

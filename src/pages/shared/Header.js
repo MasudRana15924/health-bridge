@@ -32,7 +32,7 @@ const Header = () => {
     }
     return (
         <header className="absolute inset-x-0 top-0 z-50">
-            <nav className="flex items-center justify-between  p-4 lg:p-6 lg:px-8" aria-label="Global">
+            <nav className="flex items-center justify-between pr-3 lg:p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
@@ -91,7 +91,7 @@ const Header = () => {
             {/* for small devices */}
             <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-16 ' : 'hidden'}>
                 <div className="grid grid-cols-2 md:gap-96">
-                    <RxCross1 className="text-xl ml-5 mt-5 text-black" onClick={showMenu}></RxCross1>
+                    <RxCross1 className="text-xl ml-5  mt-5 " onClick={showMenu}></RxCross1>
 
                 </div>
                 <ul>
@@ -176,7 +176,7 @@ const Header = () => {
                     </div> :
                         <div>
                             <li>
-                                <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-4 font-semibold  block">Login</Link>
+                                <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5  font-semibold  block">Login</Link>
                             </li>
                             <li>
                                 <Link to="/doctor/login" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-4 font-semibold  block">Doctor Login</Link>
