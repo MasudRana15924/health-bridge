@@ -79,9 +79,8 @@ const DoctorLis = () => {
                 {/* for small devices */}
                 <div className="pr-5 pl-5 mx-auto lg:hidden md:hidden flex justify-between mt-24 ">
 
-                   {
-                    doctors.length?  <h2 className="text-xl  leading-6 text-gray-900 mt-1">All Doctors ({doctors.length})</h2>: <h2 className="text-xl  leading-6 text-gray-900 mt-1">All Doctors </h2>
-                   }
+                   <h2 className="text-xl  leading-6 text-gray-900 mt-1">All Doctors </h2>
+                   
                     {/* <button className="btn btn-sm bg-white text-gray-900" >Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button> */}
                     <a href="#my_modal_8" className="btn btn-sm border-white bg-white text-gray-900 hover:bg-white ">Filter <BsFilterRight className="text-2xl"></BsFilterRight></a>
                 </div>
