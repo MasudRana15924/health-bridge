@@ -31,7 +31,8 @@ const BookAppointment = () => {
     const doctorId = doctor._id;
     const doctordegree = doctor.degree;
     const doctorwork = doctor.work;
-    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, patientgender, phone, date, schedule });
+    const url=doctor.url
+    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, patientgender, phone, date, schedule ,url});
     const handleCreate = (e) => {
         e.preventDefault();
 
@@ -70,8 +71,8 @@ const BookAppointment = () => {
             {
                 token ?
 
-                    <div className="lg:w-1/4 mx-auto mt-48">
-                        <h3 class="text-start w-3/4 mx-auto text-3xl font-bold mb-5">Make an Appointment</h3>
+                    <div className=" lg:w-1/4 mx-auto mt-24 lg:mt-48">
+                        <h3 class="text-start w-3/4 mx-auto text-xl lg:text-3xl font-bold mb-5">Make an Appointment</h3>
                         <form action="" className="mt-10" onSubmit={handleCreate}>
 
                             <div className="">
@@ -111,7 +112,7 @@ const BookAppointment = () => {
                                 </select>
                             </div>
 
-                            <button className="btn bg-black mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
+                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 w-3/4  text-white font-semibold text-center mb-5">Book Appointment </button>
                         </form>
                     </div>
                     : <div>

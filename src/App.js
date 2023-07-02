@@ -51,6 +51,7 @@ import DoctorAppointments from './pages/doctor/DoctorAppointments';
 import DoctorForgotPassword from './pages/doctor/DoctorForgotPassword';
 import DoctorResetPassword from './pages/doctor/DoctorResetPassword';
 import ChangePassword from './pages/doctor/ChangePassword';
+import Payment from './pages/payment/Payment';
 
 
 
@@ -87,11 +88,11 @@ function App() {
             <Route path="/doctor-forgot-password" element={< DoctorForgotPassword />}></Route>
             <Route exact path="/forgot/password/reset/:token" element={<DoctorResetPassword></DoctorResetPassword>} />
             <Route path="/doctor/change/password" element={<PrivateRoute><ChangePassword /></PrivateRoute>}></Route>
-
             <Route path="/doctor-booking" element={<PrivateRoute><DoctorAppointments /></PrivateRoute>}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="/book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>
+            <Route path="/payment/successfull/:tranId" element={<Payment></Payment>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/insurance" element={<Insurance />}></Route>

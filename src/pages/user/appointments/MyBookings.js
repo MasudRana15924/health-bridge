@@ -33,8 +33,10 @@ const MyBookings = ({ booking }) => {
                     <p className="text-gray-900 text-md font-semibold " >{booking.prescription}</p>
                 </div>
             </div>
-            {/* <button onClick={handlePrint} className="print__button btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 w-3/4 mx-auto mb-5">Download prescription</button> */}
-            <a href="#my_modal_8" className="btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 mb-10 mt-5 w-3/4 mx-auto">See Prescription</a>
+           <a href={booking.url} target="_blank" rel="noopener noreferrer" className="bg-green-500 h-10 text-center text-white pt-2 font-semibold">See Doctor </a>
+           {
+            booking.prescription ?  <a href="#my_modal_8" className="btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 mb-10 mt-5 w-3/4 mx-auto">See Prescription</a>:null
+           }
             {/* download prescription */}
             <div className="modal" id="my_modal_8">
                 <div className="modal-box">
@@ -74,7 +76,8 @@ const MyBookings = ({ booking }) => {
                             <p className="text-gray-900 text-md w-2/4 " >{booking.prescription}</p>
                         </div>
                     </div>
-                    <button onClick={handlePrint} className="print__button btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 w-1/4 mx-auto mb-5 mt-12">Download</button>
+                   <button onClick={handlePrint} className="print__button btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 w-1/4 mx-auto mb-5 mt-12">Download</button>
+                   
 
                     <div className="modal-action">
                         <a href="#" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">   <RxCross1 className="text-xl text-black"></RxCross1></a>

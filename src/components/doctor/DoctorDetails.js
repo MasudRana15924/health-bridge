@@ -106,11 +106,11 @@ const DoctorDetails = ({ doctor }) => {
                       }
                         
                         {
-                            isActive === 'true' ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500">See Doctor Now</button></Link>:null
+                            isActive === 'true' ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5">See Doctor Now</button></Link>:null
                         }
                     </div>
                     <Link to="/book-appointment">
-                        <button className="border-0 btn bg-blue-500 mt-7 w-full lg:w-3/4 mx-auto mb-10">Take Onsite Appointment</button>
+                        <button className="btn btn-sm bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-7 w-3/4 lg:w-2/4 mx-auto mb-10">Take Onsite Appointment</button>
                     </Link>
                 </div>
             </div>
@@ -125,7 +125,7 @@ const DoctorDetails = ({ doctor }) => {
                     }
                 </div>
                 {
-                    user ? <div className="w-2/4  ml-5">
+                    user ? <div className="w-2/4 ">
                         <p className="mb-3 text-start font-semibold">Give a review</p>
                         <Rating
                             onChange={(e) => setRating(e.target.value)}
@@ -136,14 +136,14 @@ const DoctorDetails = ({ doctor }) => {
                         <textarea placeholder="Write ..." class="textarea textarea-bordered textarea-sm mt-2 w-full ml-0" value={comment}
                             onChange={(e) => setComment(e.target.value)}></textarea>
                         <br />
-                        <button class="btn w-full mt-2 bg-violet-600 border-violet-600" onClick={reviewSubmitHandler}>Submit</button>
+                        <button class="btn btn-sm w-full mt-2 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500" onClick={reviewSubmitHandler}>Submit</button>
                     </div> : null
                 }
             </div>
             {/* review for small devices */}
             <div className="lg:hidden md:hidden">
                 {
-                    user ? <div className="lg:w-1/4 ml-5">
+                    user ? <div className="lg:w-1/4 mb-10">
                         <p className="mb-3 text-start font-semibold">Give a review</p>
                         <Rating
                             onChange={(e) => setRating(e.target.value)}
@@ -154,7 +154,7 @@ const DoctorDetails = ({ doctor }) => {
                         <textarea placeholder="Write ..." class="textarea textarea-bordered textarea-sm mt-2 w-full ml-0" value={comment}
                             onChange={(e) => setComment(e.target.value)}></textarea>
                         <br />
-                        <button class="btn w-full mt-2 bg-violet-600 border-violet-600" onClick={reviewSubmitHandler}>Submit</button>
+                        <button class="btn btn-sm w-full mt-2 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500" onClick={reviewSubmitHandler}>Submit</button>
                     </div> : null
                 }
                 <div className="">
