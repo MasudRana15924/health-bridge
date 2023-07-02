@@ -26,9 +26,9 @@ const MyBookings = ({ booking }) => {
                     </div>
                 </div>
                 <div className=" text-start ml-5">
-                    <p className="text-slate-600 text-md font-semibold " >Appointment : {date}</p>
+                    {/* <p className="text-slate-600 text-md font-semibold " >Appointment : {date}</p>
                     <p className="text-slate-600 text-md font-semibold " >Slot : {schedule}</p>
-                    <p className="text-slate-600 text-md font-semibold " >Status : {bookingStatus}</p>
+                    <p className="text-slate-600 text-md font-semibold " >Status : {bookingStatus}</p> */}
                     <p className="text-slate-400 text-md font-semibold " >Prescription</p>
                     <p className="text-gray-900 text-md font-semibold " >{booking.prescription}</p>
                 </div>

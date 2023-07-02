@@ -47,7 +47,7 @@ import  updatePrescriptionSlice  from "./doctors/updateAppointmentSlice";
 import  doctorforgotPasswordSlice  from "./doctors/doctorforgotpasswordSlice";
 import  doctorResetPasswordSlice  from "./doctors/resetPAsswordSlice";
 import doctorUpdatePasswordSlice from "./doctors/doctorUpdatePasswordSlice";
-
+import updateDoctorUrlSlice from './doctors/updateUrlSlice'
 const persistConfig = {
   key: "authentication",
   storage
@@ -103,7 +103,8 @@ const rootReducer = combineReducers({
   updatePrescription:updatePrescriptionSlice,
   doctorforgotpassword:doctorforgotPasswordSlice,
   doctorResetPassword:doctorResetPasswordSlice,
-  doctorupdatePassword:doctorUpdatePasswordSlice
+  doctorupdatePassword:doctorUpdatePasswordSlice,
+  updateDoctorUrl:updateDoctorUrlSlice
 
 });
 

@@ -53,6 +53,7 @@ import DoctorResetPassword from './pages/doctor/DoctorResetPassword';
 import ChangePassword from './pages/doctor/ChangePassword';
 import Payment from './pages/payment/Payment';
 import OnsiteBooking from './components/doctor/OnsiteBooking';
+import UpdateUrl from './pages/doctor/UpdateUrl';
 
 
 
@@ -89,6 +90,7 @@ function App() {
             <Route path="/doctor-forgot-password" element={< DoctorForgotPassword />}></Route>
             <Route exact path="/forgot/password/reset/:token" element={<DoctorResetPassword></DoctorResetPassword>} />
             <Route path="/doctor/change/password" element={<PrivateRoute><ChangePassword /></PrivateRoute>}></Route>
+            <Route path="/doctor/set-url" element={<PrivateRoute><UpdateUrl /></PrivateRoute>}></Route>
             <Route path="/doctor-booking" element={<PrivateRoute><DoctorAppointments /></PrivateRoute>}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>

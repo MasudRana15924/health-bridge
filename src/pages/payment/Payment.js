@@ -10,7 +10,7 @@ const Payment = () => {
 
                 <AiOutlineCheckCircle className="text-9xl w-1/4 mx-auto text-orange-400"></AiOutlineCheckCircle>
                 <p className=" lg:mt-10 text-4xl  lg:w-2/4 mx-auto text-orange-400">Payment Success</p>
-                <p className=" mt-3 lg:mt-5 text-md  lg:w-2/4 mx-auto text-orange-400">Check email for video call link</p>
+                <p className=" mt-3 lg:mt-5 text-md  lg:w-2/4 mx-auto text-orange-400">Check your email for video call link</p>
                <Link to="/my-booking">
                
                <button className=" mt-5 btn w-40  bg-orange-400 border-orange-400 hover:bg-orange-400 hover:border-orange-400">Done</button></Link>

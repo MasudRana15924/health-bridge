@@ -140,6 +140,12 @@ const UserSidebar = () => {
                         </Link>
                     </div>
                     <div className="flex mt-5">
+                        <RiLockPasswordFill className="mt-1 h-5 mr-3"></RiLockPasswordFill>
+                        <Link to="/doctor/set-url">
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">Set Video Link</h2>
+                        </Link>
+                    </div>
+                    <div className="flex mt-5">
                         <BsMinecartLoaded className="mt-1 h-5 mr-3"></BsMinecartLoaded>
                         <Link to="/doctor-booking">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">My Consultations</h2>
