@@ -52,6 +52,7 @@ import DoctorForgotPassword from './pages/doctor/DoctorForgotPassword';
 import DoctorResetPassword from './pages/doctor/DoctorResetPassword';
 import ChangePassword from './pages/doctor/ChangePassword';
 import Payment from './pages/payment/Payment';
+import OnsiteBooking from './components/doctor/OnsiteBooking';
 
 
 
@@ -92,6 +93,7 @@ function App() {
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
             <Route path="/book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>
+            <Route path="/onsite-book-appointment" element={<PrivateRoute><OnsiteBooking/></PrivateRoute>}></Route>
             <Route path="/payment/successfull/:tranId" element={<Payment></Payment>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>

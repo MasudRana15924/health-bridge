@@ -109,9 +109,9 @@ const DoctorDetails = ({ doctor }) => {
                             isActive === 'true' ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5">See Doctor Now</button></Link>:null
                         }
                     </div>
-                    <Link to="/book-appointment">
+                    {/* <Link to="/onsite-book-appointment">
                         <button className="btn btn-sm bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-7 w-3/4 lg:w-2/4 mx-auto mb-10">Take Onsite Appointment</button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 
