@@ -4,7 +4,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoPrimitiveDot } from "react-icons/go";
 import imgAvatar from '../../images/avatar.jpg'
 const DoctorsList = ({ doctor }) => {
-    const { name, work, expert, degree, fees, ratings, avatar, isActive, experience } = doctor;
+    const { name, work, expert, degree, fees,avatar, isActive, experience } = doctor;
 
     return (
         <Link to={`/doctor/${doctor._id}`} >
@@ -27,7 +27,7 @@ const DoctorsList = ({ doctor }) => {
                             <p className="font-semibold"> {name} </p>
 
                             {
-                                isActive === 'true' ? <GoPrimitiveDot className="text-green-600 mt-1"></GoPrimitiveDot> : null
+                                isActive === true ? <GoPrimitiveDot className="text-green-600 mt-1"></GoPrimitiveDot> : null
                             }
                         </div>
                         <p className="text-slate-600  text-md " >

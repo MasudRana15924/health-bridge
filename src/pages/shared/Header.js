@@ -76,11 +76,11 @@ const Header = () => {
                     {
                         token ?
                             <Link to="/user-info">
-                                {/* {
+                                {
                                     user.avatar.url? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" />:<p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
-                                } */}
+                                }
                                
-                                <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
+                                {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                             </Link>
                             : <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
                                 Log in <span aria-hidden="true">&rarr;</span>

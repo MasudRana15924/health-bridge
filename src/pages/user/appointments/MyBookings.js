@@ -33,10 +33,11 @@ const MyBookings = ({ booking }) => {
                     <p className="text-gray-900 text-md font-semibold " >{booking.prescription}</p>
                 </div>
             </div>
-           <a href={booking.url} target="_blank" rel="noopener noreferrer" className="bg-green-500 h-10 text-center text-white pt-2 font-semibold">See Doctor </a>
+          
            {
-            booking.prescription ?  <a href="#my_modal_8" className="btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 mb-10 mt-5 w-3/4 mx-auto">See Prescription</a>:null
+            booking.prescription ?  <a href="#my_modal_8" className="bg-green-500 h-10 text-center text-white pt-2 font-semibold">See Prescription</a>:null
            }
+            {/* <a href={booking.url} target="_blank" rel="noopener noreferrer" className="bg-green-500 h-10 text-center text-white pt-2 font-semibold">See Doctor </a> */}
             {/* download prescription */}
             <div className="modal" id="my_modal_8">
                 <div className="modal-box">

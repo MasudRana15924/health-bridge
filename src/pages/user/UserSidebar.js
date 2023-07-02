@@ -149,9 +149,9 @@ const UserSidebar = () => {
                     <div className=" mt-10">
                         {
                             user?.role === 'user' ? <Link to="/user-signin">
-                                <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={() => dispatch(logout())}>  Logout </button>
+                                <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={() => dispatch(logout())}>  Logout </button>
                             </Link> : <Link to="/doctor/login">
-                                <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={() => dispatch(logout())}>  Logout </button>
+                                <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={() => dispatch(logout())}>  Logout </button>
                                 {/* <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={handleLogout}>  Logout </button> */}
                             </Link>
                         }
@@ -192,8 +192,8 @@ const UserSidebar = () => {
                             user?.role === 'user' ? <Link to="/user-signin">
                                 <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={() => dispatch(logout())}>  Logout </button>
                             </Link> : <Link to="/doctor/login">
-                                <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={() => dispatch(logout())}>  Logout </button>
-                                {/* <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={handleLogout}>  Logout </button> */}
+                                <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500 " onClick={() => dispatch(logout())}>  Logout </button>
+                              
                             </Link>
                         }
 

@@ -63,8 +63,11 @@ const DoctorDetails = ({ doctor }) => {
                 <div className="p-5 lg:p-0 text-start text-sm font-semibold leading-6 text-gray-900">
                     <div className="flex mt-3">
                         <p className="font-semibold text-lg"> {name} </p>
-                        {
-                            isActive === 'true' ? <GoPrimitiveDot className="text-green-600 text-xl"></GoPrimitiveDot> : null
+                        {/* {
+                            isActive === true ? <GoPrimitiveDot className="text-green-600 text-xl mt-1"></GoPrimitiveDot> : null
+                        } */}
+                         {
+                            isActive === true ? <button className="  bg-green-500 h-6 w-12 border rounded-lg text-white ml-3 mt-1 border-green-500">active</button> : null
                         }
                     </div>
                     <p className="text-slate-600  text-md " >
@@ -106,7 +109,7 @@ const DoctorDetails = ({ doctor }) => {
                       }
                         
                         {
-                            isActive === 'true' ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5">See Doctor Now</button></Link>:null
+                            isActive === true ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5">See Doctor Now</button></Link>:null
                         }
                     </div>
                     {/* <Link to="/onsite-book-appointment">
