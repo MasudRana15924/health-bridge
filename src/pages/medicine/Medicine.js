@@ -42,7 +42,7 @@ const Medicine = () => {
                         <div className="flex mt-4">
 
                             <BsBag className="h-6 w-6"> </BsBag>
-                            <span className="cart-text ml-1"> {cartTotalQuantity} </span>
+                            <span className="ml-1"> {cartTotalQuantity} </span>
                         </div>
                     </Link>
                 </div>

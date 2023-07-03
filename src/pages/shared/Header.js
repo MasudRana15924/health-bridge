@@ -100,6 +100,12 @@ const Header = () => {
                     <li>
                         <Link to="/nurses" className="text-sm  text-gray-900 px-5 py-3 font-semibold  block" onClick={showMenu}>Nurses</Link>
                     </li>
+                    <li>
+                        <Link to="/medicine" className="text-sm  text-gray-900 px-5 py-3 font-semibold  block" onClick={showMenu}>Order Medicine</Link>
+                    </li>
+                    <li>
+                        <Link to="/ambulance" className="text-sm  text-gray-900 px-5 py-3 font-semibold  block" onClick={showMenu}>Find Ambulance</Link>
+                    </li>
 
                     <li>
                         <Link to="/bloods" className="text-sm  text-gray-900 px-5 py-3 font-semibold  block" onClick={showMenu}>Find Bloods</Link>
