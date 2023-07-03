@@ -10,13 +10,15 @@ import { logout } from '../../state/user/Login/loginSlice';
 
 
 const navigation = [
-    { name: 'Home', to: '/home' },
-    { name: 'About Us', to: '/about' },
-    { name: 'Contact Us', to: '/contact' },
+    // { name: 'Home', to: '/home' },
+    // { name: 'About Us', to: '/about' },
+    // { name: 'Contact Us', to: '/contact' },
     { name: 'Doctors', to: '/doctors' },
+    { name: 'Nurses', to: "/nurses" },
+    { name: 'Order Medicine', to: '/medicine' },
     { name: 'Insurance', to: '/insurance' },
     { name: 'Find Bloods', to: '/bloods' },
-    { name: 'Nurses', to: "/nurses" },
+    { name: 'Find Ambulance', to: '/ambulance' },
     { name: 'For Doctors', to: "/doctor/signup" },
 ]
 
@@ -54,20 +56,8 @@ const Header = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
-
-                    {/* {
-                        user?.role==='doctor' ? <div  className="hidden lg:flex lg:gap-x-12">{navigations.map((item) => (
-                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
-                                {item.name}
-                            </Link>
-                        ))}</div>:<div  className="hidden lg:flex lg:gap-x-12">{navigation.map((item) => (
-                            <Link key={item.name} as={HashLink} to={item.to} className="text-sm font-semibold leading-6 text-gray-900">
-                                {item.name}
-                            </Link>
-                        ))}</div>
-                     } */}
                     {navigation.map((item) => (
-                        <Link key={item.name} as={HashLink} to={item.to} className="text-md font-semibold leading-6 text-gray-900">
+                        <Link key={item.name} as={HashLink} to={item.to} className="text-xl font-semibold leading-6 text-gray-900">
                             {item.name}
                         </Link>
                     ))}
@@ -183,35 +173,6 @@ const Header = () => {
                             </li>
                         </div>
                 }
-
-                {/* {
-                     user?.role==='doctor'? <ul>
-                        <li>
-                            <Link to="/user-info" onClick={showMenu} className=" text-sm  text-gray-900 px-5 py-4 font-semibold  block">
-                                My Profile
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/user/updateinfo" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5  font-semibold  block">
-                                Update Profile
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/user/change/password" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5  font-semibold  block">
-                                Change Password
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/doctor-booking" onClick={showMenu} className="mt-3 text-sm py-4 text-gray-900 px-5 font-semibold  block">
-                             Consultation History
-                            </Link>
-                        </li>
-                      
-                        <button  className="btn btn-sm text-sm ml-5 bg-red-500 border-red-500 hover:bg-red-500 w-3/4 mx-auto mt-32" onClick={() => dispatch(logout())}>Logout</button>
-                    </ul> : <li>
-                        <Link to="/user-signin" onClick={showMenu} className="text-sm  text-gray-900 px-5 py-4 font-semibold  block">Login</Link>
-                    </li>
-                } */}
             </ul>
 
         </header>

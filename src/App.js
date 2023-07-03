@@ -54,6 +54,9 @@ import ChangePassword from './pages/doctor/ChangePassword';
 import Payment from './pages/payment/Payment';
 import OnsiteBooking from './components/doctor/OnsiteBooking';
 import UpdateUrl from './pages/doctor/UpdateUrl';
+import Medicine from './pages/medicine/Medicine';
+import Ambulance from './pages/ambulance/Ambulance';
+import Cart from './pages/medicine/Cart';
 
 
 
@@ -117,6 +120,10 @@ function App() {
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
             <Route path="/admin/alluser" element={<PrivateRoute><AllUsers/></PrivateRoute>}></Route>
             <Route path="/bloods" element={<Blood></Blood>}></Route>
+            <Route path="/medicine" element={<Medicine></Medicine>}></Route>
+            <Route path="/ambulance" element={<Ambulance></Ambulance>}></Route>
+            <Route path="/cart" element={<Cart></Cart>}></Route>
+
           </Routes>
 
           <Footer></Footer>

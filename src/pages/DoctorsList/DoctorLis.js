@@ -12,6 +12,7 @@ import { BsFilterRight } from "react-icons/bs";
 import { useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 import FilterStatus from './FilterStatus';
+import { Alert } from '@mui/material';
 const DoctorLis = () => {
     const dispatch = useDispatch();
     const { doctors, isLoading, isError, error } = useSelector(state => state.filterDoctors.filterDoctors);
@@ -27,6 +28,11 @@ const DoctorLis = () => {
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
     if (!isLoading && !doctors) {
         content = <Loading></Loading>
+    }
+    if (!isLoading && !isError && doctors?.length === 0) {
+        content = <div className="w-full p-5 lg:p-0 lg:w-1/4 lg:mt-24">
+            <Alert severity="error" >No Doctors Found</Alert>
+        </div>
     }
     if (!isLoading && !isError && doctors?.length > 0) {
         content = doctors.map(doctor => <DoctorsList key={doctor._id} doctor={doctor} />)

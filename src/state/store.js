@@ -48,6 +48,8 @@ import  doctorforgotPasswordSlice  from "./doctors/doctorforgotpasswordSlice";
 import  doctorResetPasswordSlice  from "./doctors/resetPAsswordSlice";
 import doctorUpdatePasswordSlice from "./doctors/doctorUpdatePasswordSlice";
 import updateDoctorUrlSlice from './doctors/updateUrlSlice'
+import  filtermedicinesSlice  from "./medicine/FilterMedicineSlice";
+import cartReducer from './medicine/cartSlice'
 const persistConfig = {
   key: "authentication",
   storage
@@ -104,7 +106,9 @@ const rootReducer = combineReducers({
   doctorforgotpassword:doctorforgotPasswordSlice,
   doctorResetPassword:doctorResetPasswordSlice,
   doctorupdatePassword:doctorUpdatePasswordSlice,
-  updateDoctorUrl:updateDoctorUrlSlice
+  updateDoctorUrl:updateDoctorUrlSlice,
+  medicines:filtermedicinesSlice,
+  cart: cartReducer,
 
 });
 

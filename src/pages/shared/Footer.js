@@ -12,15 +12,14 @@ const Footer = () => {
       <footer className="w-3/4 mx-auto footer p-10 border-t text-base-content">
         <div>
           <span className="footer-title">Services</span>
-          <Link className="link link-hover">Online Consultant</Link>
-          <Link className="link link-hover">Appointment</Link>
-          <Link className="link link-hover">Blood</Link>
-          <Link className="link link-hover">Nurses</Link>
+          <Link to="doctors" className="link link-hover">Online Consultant</Link>
+          <Link to="/bloods" className="link link-hover">Blood</Link>
+          <Link to="/nurses" className="link link-hover">Nurses</Link>
         </div>
         <div>
           <span className="footer-title">Who Are We ?</span>
-          <Link className="link link-hover">About</Link>
-          <Link className="link link-hover">Contact</Link>
+          <Link to="/about" className="link link-hover">About</Link>
+          <Link to="/contact" className="link link-hover">Contact</Link>
 
         </div>
         <div>
