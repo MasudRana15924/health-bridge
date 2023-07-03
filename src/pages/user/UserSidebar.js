@@ -18,12 +18,10 @@ const UserSidebar = () => {
     const user = loggeduser.user;
     const userToken = loggeduser.token;
     const isActive=false;
-     const data=isActive;
+     const data={isActive};
     const handleLogout = () => {
-        //   dispatch(logout(data));
-          dispatch(updateLogout ({ data, userToken }));
-
-
+          dispatch(logout());
+         dispatch(updateLogout ({ data, userToken }));
     }
     return (
         <div className="">
@@ -121,7 +119,7 @@ const UserSidebar = () => {
                     </div>
                     <div className="flex mt-5">
                         <CgProfile className="mt-1 h-5 mr-3"></CgProfile>
-                        <Link to="/doctor/info">
+                        <Link to="/user-info">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">My Profile</h2>
                         </Link>
                     </div>
@@ -142,7 +140,7 @@ const UserSidebar = () => {
                     <div className="flex mt-5">
                         <RiLockPasswordFill className="mt-1 h-5 mr-3"></RiLockPasswordFill>
                         <Link to="/doctor/set-url">
-                            <h2 className="text-md font-semibold leading-6 text-gray-900">Set Video Link</h2>
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">Update Video Link</h2>
                         </Link>
                     </div>
                     <div className="flex mt-5">
@@ -154,9 +152,11 @@ const UserSidebar = () => {
 
                     <div className=" mt-10">
                         {
-                            user?.role === 'user' ? <Link to="/user-signin">
-                                <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={() => dispatch(logout())}>  Logout </button>
-                            </Link> : <Link to="/doctor/login">
+                            user?.role === 'doctor' ? <form >
+                                <Link to="/doctor/login">
+                                <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={handleLogout}>  Logout </button>
+                            </Link>
+                            </form> : <Link to="/user-signin">
                                 <button className="btn  btn-sm  w-3/4 bg-red-500 border-red-500  hover:bg-red-500 hover:border-red-500" onClick={() => dispatch(logout())}>  Logout </button>
                                 {/* <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700 " onClick={handleLogout}>  Logout </button> */}
                             </Link>

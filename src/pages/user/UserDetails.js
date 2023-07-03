@@ -34,6 +34,9 @@ const UserDetails = () => {
         },
         );
     };
+    const updateUser = (e) => {
+        e.preventDefault();
+    }
     const updateProfileDataChange = (e) => {
         const reader = new FileReader();
         reader.onload = () => {
@@ -52,87 +55,66 @@ const UserDetails = () => {
                     <UserSidebar></UserSidebar>
                 </div>
                 <div className="w-full  lg:w-full lg:m-0">
-                    <form onSubmit={registerSubmit}>
-                        <div className="w-full  lg:w-full lg:m-0">
-                            <div className="avatar mr-28">
-                                <div className="w-32 rounded-full  ">
-                                    {
-                                        user?.avatar ? <img src={user.avatar.url} alt="" /> :  <img src={avatarPreview} alt="Avatar Preview" />
-                                    }
-                                    
-                                </div>
-                                
-                            </div>
+                    {
+                        user?.role === 'doctor' ? <form onSubmit={registerSubmit}>
+                            <div className="w-full  lg:w-full lg:m-0">
+                                <div className="avatar mr-28">
+                                    <div className="w-32 rounded-full  ">
+                                        {
+                                            user?.avatar ? <img src={user.avatar.url} alt="" /> : <img src={avatarPreview} alt="Avatar Preview" />
+                                        }
 
-                            <div className="w-3/4 mx-auto">
-                            <TextField id="input-with-sx"  variant="standard" label={user.name} className="w-full py-3 px-6"  value={name} onChange={(e) => setName(e.target.value)}/>
-                            </div>
-                            <div className="w-3/4 mx-auto mt-12">
-                            <TextField id="input-with-sx" label={user.email} variant="standard" className="w-full py-3 px-6"  value={email} onChange={(e) => setEmail(e.target.value)}/>
-                            </div>
-                            {/* <div>
-                                        <input
-                                            type="file"
-                                            name="avatar"
-                                            accept="image/*"
-                                            onChange={updateProfileDataChange}
-                                            className="mt-5 ms-3 text-sm "
-                                        />
+                                    </div>
 
-                                    </div> */}
-                            {/* <div className="w-3/4 mx-auto">
-                                <div className="mb-2 ">
-                                    <p className="text-start text-sm text-blue-300 mt-5">What is your Name?</p>
-                                    <input className="border border-gray-200 w-full h-10 rounded p-3 " type="text" id="username"
-                                        name="name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        placeholder={user.name}
-                                        required
-                                    />
                                 </div>
-                                <div className="mb-2 ">
-                                    <p className="text-start text-sm text-blue-300 mt-5">What is your Name?</p>
-                                    <input className="border border-gray-200 w-full h-10 rounded p-3 " type="text" id="username"
-                                        name="name"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder={user.email}
-                                        required
-                                    />
+                                <div className="w-3/4 mx-auto">
+                                    <TextField id="input-with-sx" variant="standard" label={user.title} className="w-full py-3 px-6" value={name} onChange={(e) => setName(e.target.value)} />
                                 </div>
-                                <div className="mb-2 ">
-                                    <p className="text-start text-sm text-blue-300 mt-5">What is your Gender?</p>
-                                    <select name="Gender" className="w-full h-12 border rounded" value={gender} onChange={(e) => setGender(e.target.value)}>
-                                        <option  >Select Gender </option>
-                                        <option  >Male </option>
-                                        <option >Female </option>
-                                    </select>
+                                <div className="w-3/4 mx-auto">
+                                    <TextField id="input-with-sx" variant="standard" label={user.name} className="w-full py-3 px-6" value={name} onChange={(e) => setName(e.target.value)} />
                                 </div>
-                                <div className="mb-2 mt-5">
-                                    <p className="text-start text-sm text-blue-300 ">What is your Phone?</p>
-                                    <input className="border border-gray-200 w-full h-10 rounded p-3 " type="text" id="username"
-                                        name="name"
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                        placeholder="Enter Your Phone Number"
-                                        required
-                                    />
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.email} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
-                                <div className="mb-2 ">
-                                    <p className="text-start text-sm text-blue-300 mt-5">What is your Birthdate?</p>
-                                    <input className="border border-gray-200 w-full h-10 rounded p-3 mb-5" type="date" id="username"
-                                        name="name"
-                                        value={birthdate}
-                                        onChange={(e) => setBirthdate(e.target.value)}
-                                        placeholder="Birth Date"
-                                        required
-                                    />
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.degree} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
-                                <button className=" text-white py-1 w-full rounded-md  font-semibold h-10 bg-blue-500 mt-5" type="submit">Update</button>
-                            </div> */}
-                        </div>
-                    </form>
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.expert} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.work} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.gender} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className="w-3/4 mx-auto">
+                                    <TextField id="input-with-sx" variant="standard" label={user.phone} className="w-full py-3 px-6" value={name} onChange={(e) => setName(e.target.value)} />
+                                </div>
+                                <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500">Update</button>
+
+                            </div>
+                        </form> : <form onSubmit={updateUser}>
+                            <div className="w-full  lg:w-full lg:m-0">
+                                <div className="avatar mr-28">
+                                    <div className="w-32 rounded-full  ">
+                                        {
+                                            user?.avatar ? <img src={user.avatar.url} alt="" /> : <img src={avatarPreview} alt="Avatar Preview" />
+                                        }
+                                    </div>
+                                </div>
+
+
+                                <div className="w-3/4 mx-auto">
+                                    <TextField id="input-with-sx" variant="standard" label={user.name} className="w-full py-3 px-6" value={name} onChange={(e) => setName(e.target.value)} />
+                                </div>
+                                <div className="w-3/4 mx-auto mt-5">
+                                    <TextField id="input-with-sx" label={user.email} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500">Update</button>
+                            </div>
+                        </form>
+                    }
                 </div>
             </div>
         </div>

@@ -45,11 +45,11 @@ const DoctorLogin = () => {
                         }
                         <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                                <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <EmailIcon sx={{ color: 'action.active', mr: 2, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Email" variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                                <LockOpenIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <LockOpenIcon sx={{ color: 'action.active', mr: 2, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Password" variant="standard" className="w-full py-3 px-6" value={password} onChange={(e) => setPassword(e.target.value)} />
                             </Box>
                             <div className="flex items-center justify-between">

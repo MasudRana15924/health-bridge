@@ -1,5 +1,5 @@
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit"
-import {privatePost } from "../../../utilities/apiCaller";
+import { privatePut } from "../../../utilities/apiCaller";
 
 
 
@@ -14,7 +14,7 @@ export const updateLogout = createAsyncThunk(
     'user/updateLogout',
     async ({data,userToken}, { rejectWithValue }) => {
         try{
-            const updateprofile = await privatePost('/logout/doctor', userToken, data);
+            const updateprofile = await privatePut('/logout/doctor', userToken, data);
             return updateprofile;
         }catch(err){
             return rejectWithValue(err);
