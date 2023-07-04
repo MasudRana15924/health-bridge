@@ -58,6 +58,7 @@ import Ambulance from './pages/ambulance/Ambulance';
 import Cart from './pages/medicine/Cart';
 import Shipping from './pages/medicine/Shipping';
 import OrderPayment from './pages/payment/OrderPayment';
+import MyOrder from './pages/user/order/MyOrder';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -103,6 +104,7 @@ function App() {
             <Route path="/nurses" element={<Nurses />}></Route>
             <Route path="/nurse/:nurseId" element={<SingleNurse />}></Route>
             <Route path="/my-booking" element={<PrivateRoute><MyBooking /></PrivateRoute>}></Route>
+            <Route path="/my-order" element={<PrivateRoute><MyOrder/></PrivateRoute>}></Route>
             <Route path="/my/hire-nurses" element={<PrivateRoute><HireNurse /></PrivateRoute>}></Route>
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>

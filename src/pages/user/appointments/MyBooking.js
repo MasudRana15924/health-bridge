@@ -5,6 +5,8 @@ import { fetchApponitments } from '../../../state/user/appointment/myAppointment
 import Loading from '../../loader/Loading';
 import UserSidebar from '../UserSidebar';
 import MyBookings from '../../../pages/user/appointments/MyBookings';
+import { Alert, AlertTitle } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,9 +28,11 @@ const MyBooking = () => {
 
     if (!isLoading && !isError && appointment?.length === 0) {
         content = <div className="col-span-12  ">
-            <div class="alert alert-error shadow-lg text-start  mt-5 h-12 w-2/4 ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span className="text-white">No Appointments Found</span>
+           <div class=" mt-5 h-12 lg:w-2/4 ">
+                <Alert severity="error">
+                    <AlertTitle className="text-start">Error</AlertTitle>
+                   No Consultations found — <Link to="/doctors"><strong>take consultations!</strong></Link>
+                </Alert>
             </div>
         </div>
     }

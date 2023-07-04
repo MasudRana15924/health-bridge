@@ -1,7 +1,9 @@
 import React from 'react';
 import { AiOutlineUnorderedList, AiOutlineEdit, AiOutlineUser } from "react-icons/ai";
+import { CiMedicalCase} from "react-icons/ci";
 import { BsMinecartLoaded, BsFillChatDotsFill } from "react-icons/bs";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { RiNurseFill } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { MdInfoOutline } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
@@ -181,13 +183,19 @@ const UserSidebar = () => {
                         </Link>
                     </div>
                     <div className="flex mt-5">
-                        <BsMinecartLoaded className="mt-1 h-5 mr-3"></BsMinecartLoaded>
+                        <CiMedicalCase className="mt-1 h-5 mr-3"></CiMedicalCase>
                         <Link to="/my-booking">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">Consultations History</h2>
                         </Link>
                     </div>
                     <div className="flex mt-5">
                         <BsMinecartLoaded className="mt-1 h-5 mr-3"></BsMinecartLoaded>
+                        <Link to="/my-order">
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">Order History</h2>
+                        </Link>
+                    </div>
+                    <div className="flex mt-5">
+                        <RiNurseFill className="mt-1 h-5 mr-3"></RiNurseFill>
                         <Link to="/my/hire-nurses">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">Hired Nurses History</h2>
                         </Link>
