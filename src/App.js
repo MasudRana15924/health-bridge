@@ -57,6 +57,7 @@ import UpdateUrl from './pages/doctor/UpdateUrl';
 import Medicine from './pages/medicine/Medicine';
 import Ambulance from './pages/ambulance/Ambulance';
 import Cart from './pages/medicine/Cart';
+import Shipping from './pages/medicine/Shipping';
 
 
 
@@ -123,6 +124,7 @@ function App() {
             <Route path="/medicine" element={<Medicine></Medicine>}></Route>
             <Route path="/ambulance" element={<Ambulance></Ambulance>}></Route>
             <Route path="/cart" element={<Cart></Cart>}></Route>
+            <Route path="/shipping" element={<Shipping></Shipping>}></Route>
 
           </Routes>
 

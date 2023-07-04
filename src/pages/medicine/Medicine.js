@@ -58,7 +58,7 @@ const Medicine = () => {
                     <button onClick={handleSearch} className="btn btn-sm  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 h-10 w-20 absolute ml-52 lg:ml-96"><BsSearch></BsSearch></button>
 
                 </form>
-                <div className="mr-40 mt-1">
+                <div className="mr-40 mt-1 hidden lg:block">
                     <Button variant="outlined" size="small" className="h-8 mr-20" onClick={Reset}>
                         Reset
                     </Button>

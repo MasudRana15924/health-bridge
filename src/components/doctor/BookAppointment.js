@@ -19,10 +19,7 @@ const BookAppointment = () => {
     const userToken = loggeduser.token
     const [patientname, setPname] = useState('');
     const [patientemail, setEmail] = useState('');
-    const [patientgender, setGender] = useState('');
     const [phone, setPhone] = useState('');
-    const [date, setDate] = useState('');
-    const [schedule, setSchedule] = useState('');
     const doctortitle = doctor.title;
     const doctorname = doctor.name;
     const doctoremail = doctor.email;
@@ -32,7 +29,7 @@ const BookAppointment = () => {
     const doctordegree = doctor.degree;
     const doctorwork = doctor.work;
     const url=doctor.url
-    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, patientgender, phone, date, schedule ,url});
+    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, phone ,url});
     const handleCreate = (e) => {
         e.preventDefault();
 
