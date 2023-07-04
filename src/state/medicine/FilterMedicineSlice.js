@@ -5,8 +5,8 @@ import { getFilterMedicine } from './filterMedicineApi';
 
 export const fetchFilterMedicne = createAsyncThunk(
     'medicine/fetchFilterMedicne',
-    async () => {
-        const medicines = await getFilterMedicine()
+    async ({search}) => {
+        const medicines = await getFilterMedicine(search)
         return medicines;
     }
 );
