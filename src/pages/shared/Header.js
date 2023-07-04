@@ -72,8 +72,8 @@ const Header = () => {
                                
                                 {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                             </Link>
-                            : <Link to="/user-signin" className="text-sm font-semibold leading-6 text-gray-900">
-                                Log in <span aria-hidden="true">&rarr;</span>
+                            : <Link to="/user-signin" className="text-xl font-semibold leading-6 text-gray-900">
+                                Log in
                             </Link>
                     }
                 </div>

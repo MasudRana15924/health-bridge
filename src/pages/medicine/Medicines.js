@@ -4,12 +4,21 @@ import { BsBag } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
 import { addToCart, getTotals } from '../../state/medicine/cartSlice';
 import { ToastContainer, toast } from 'react-toastify';
-const Medicines = ({medicine}) => {
+const Medicines = ({ medicine }) => {
     const dispatch = useDispatch();
-    const handleCart=(product)=>{
+    const handleCart = (product) => {
         dispatch(addToCart(product));
-        dispatch(getTotals())
-        toast.success("Added To Cart")
+        dispatch(getTotals());
+        toast.success('Item Added to Cart', {
+            position: "bottom-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
     return (
         <div className=" col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-4  ">
@@ -31,40 +40,33 @@ const Medicines = ({medicine}) => {
                             {medicine.name}
                         </p>
                     </Link>
-    
+
                     <div className="flex justify-between gap-2">
                         {/* < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt> */}
                         <p className="text-sm font-semibold leading-6 text-gray-900 mt-2" >
                             Price {medicine.price}Tk
                         </p>
                         {
-                    medicine?.quantity > 0 ?
-           
-                      <BsBag className="h-4 w-4 mt-3" onClick={() => handleCart(medicine)}> </BsBag>
-                     :null
-                   }
+                            medicine?.quantity > 0 ?
+
+                                <BsBag className="h-4 w-4 mt-3" onClick={() => handleCart(medicine)}> </BsBag>
+                                : null
+                        }
                     </div>
-                    
-                 
-
-                
                 </div>
-               
-            
-
             </div>
             <ToastContainer
-position="top-center"
-autoClose={500}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
+                position="top-center"
+                autoClose={500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

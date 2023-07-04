@@ -18,7 +18,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Loader from './pages/loader/Loader';
 import PrivateRoute from './components/Privateroute/PrivateRoute';
-import PublicRoute from './components/Privateroute/PublicRoute';
 import DoctorLis from './pages/DoctorsList/DoctorLis';
 import Contact from './components/landingpage/Contact';
 import About from './components/landingpage/About';
@@ -58,9 +57,7 @@ import Medicine from './pages/medicine/Medicine';
 import Ambulance from './pages/ambulance/Ambulance';
 import Cart from './pages/medicine/Cart';
 import Shipping from './pages/medicine/Shipping';
-
-
-
+import OrderPayment from './pages/payment/OrderPayment';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -76,12 +73,11 @@ function App() {
         <BrowserRouter>
           <Header></Header>
           <Routes >
-
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={< UserSignup />}></Route>
-            <Route path="/activation/:activation_token"  element={<Verify />} />
+            <Route path="/activation/:activation_token" element={<Verify />} />
             <Route path="/user/password" element={<ForgotPass />}></Route>
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
@@ -98,8 +94,8 @@ function App() {
             <Route path="/doctor-booking" element={<PrivateRoute><DoctorAppointments /></PrivateRoute>}></Route>
             <Route path="/doctor/:doctorId" element={<SingleDoctor />}></Route>
             <Route path="/doctors" element={<DoctorLis />}></Route>
-            <Route path="/book-appointment" element={<PrivateRoute><BookAppointment/></PrivateRoute>}></Route>
-            <Route path="/onsite-book-appointment" element={<PrivateRoute><OnsiteBooking/></PrivateRoute>}></Route>
+            <Route path="/book-appointment" element={<PrivateRoute><BookAppointment /></PrivateRoute>}></Route>
+            <Route path="/onsite-book-appointment" element={<PrivateRoute><OnsiteBooking /></PrivateRoute>}></Route>
             <Route path="/payment/successfull/:tranId" element={<Payment></Payment>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
@@ -110,7 +106,7 @@ function App() {
             <Route path="/my/hire-nurses" element={<PrivateRoute><HireNurse /></PrivateRoute>}></Route>
             <Route path="/chat" element={<PrivateRoute><Conversations /></PrivateRoute>}></Route>
             <Route path="/admin-appointments" element={<PrivateRoute><AdminAppointments /></PrivateRoute>}></Route>
-            <Route path="/appointment/:appointmentId" element={<PrivateRoute><SingleAppointments/></PrivateRoute>}></Route>
+            <Route path="/appointment/:appointmentId" element={<PrivateRoute><SingleAppointments /></PrivateRoute>}></Route>
             <Route path="/admin/all-doctors" element={<PrivateRoute><AdminDoctors /></PrivateRoute>}></Route>
             <Route path="/admin/create-doctor" element={<PrivateRoute><CreateDoctor /></PrivateRoute>}></Route>
             <Route path="/admin/create-nurse" element={<PrivateRoute><CreateNurse /></PrivateRoute>}></Route>
@@ -119,20 +115,18 @@ function App() {
             <Route path="/admin/all-nurses" element={<PrivateRoute><AllNurses /></PrivateRoute>}></Route>
             <Route path="/admin/all-hired-nurses" element={<PrivateRoute><HiredNurses /></PrivateRoute>}></Route>
             <Route path="/admin-dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
-            <Route path="/admin/alluser" element={<PrivateRoute><AllUsers/></PrivateRoute>}></Route>
+            <Route path="/admin/alluser" element={<PrivateRoute><AllUsers /></PrivateRoute>}></Route>
             <Route path="/bloods" element={<Blood></Blood>}></Route>
             <Route path="/medicine" element={<Medicine></Medicine>}></Route>
             <Route path="/ambulance" element={<Ambulance></Ambulance>}></Route>
             <Route path="/cart" element={<Cart></Cart>}></Route>
-            <Route path="/shipping" element={<Shipping></Shipping>}></Route>
-
+            <Route path="/shipping" element={<PrivateRoute><Shipping></Shipping></PrivateRoute>}></Route>
+            <Route path="/order/payment/successfull/:tranId" element={<OrderPayment></OrderPayment>}></Route>
           </Routes>
-
           <Footer></Footer>
         </BrowserRouter>
       </div>}
     </div>
-
   );
 }
 export default App;
