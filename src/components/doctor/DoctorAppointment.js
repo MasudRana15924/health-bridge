@@ -3,12 +3,13 @@ import {RxCross1} from "react-icons/rx";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUpdatePrescription } from '../../state/doctors/updateAppointmentSlice';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 const DoctorAppointment = ({ booking }) => {
     const { loggeduser } = useSelector(
         (state) => state.userDetails
     );
     const userToken = loggeduser.token
-    const {_id, patientname, patientimage, date, schedule, bookingStatus,patientemail} = booking;
+    const {_id,patientname, patientimage,patientemail} = booking;
     const [prescription,setPres] = useState('');
     const dispatch = useDispatch();
     const data={prescription,patientemail,patientname }
@@ -17,7 +18,16 @@ const DoctorAppointment = ({ booking }) => {
             dispatch(fetchUpdatePrescription({
                 data,userToken,_id
             }));
-            // toast.success('Appointments status updated'); 
+            toast.success('Prescription added', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
     }
  
     return (
@@ -42,8 +52,8 @@ const DoctorAppointment = ({ booking }) => {
                     <p className="text-slate-600 text-md font-semibold " >Slot : {schedule}</p>
                     <p className="text-slate-600 text-md font-semibold " >Status : {bookingStatus}</p> */}
                     <p className="text-slate-400 text-md font-semibold " >Prescription</p>
-                    <p className="text-gray-900 text-md font-semibold " >{booking.prescription}</p>
-                    <a href="#my_modal_8" className="btn btn-sm bg-white border-white hover:bg-white hover:border-white mb-10 mt-5 text-gray-900">Make Prescription</a>
+                    <p className="text-gray-900 text-md font-semibold mb-10" >{booking.prescription}</p>
+                    <a href="#my_modal_8" className="text-center text-green-600 pt-2 font-semibold mt-20">Make Prescription</a>
                 </div>
                 <div>
                
@@ -62,7 +72,20 @@ const DoctorAppointment = ({ booking }) => {
                     </div>
                 </div>
             </div>
-
+            <ToastContainer
+                position="top-center"
+                autoClose={500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
+            {/* Same as */}
+            <ToastContainer />
         </div>
     );
 };

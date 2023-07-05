@@ -114,8 +114,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   order:createOrderSlice,
   orders:myordersSlice,
-  allOrders:adminAllOrdersSlice
-
+  allOrders:adminAllOrdersSlice,
 });
 
 const store = configureStore({
