@@ -20,7 +20,7 @@ const MyOrder = () => {
         dispatch(fetchMyOrders({ userToken }));
     }, [dispatch, userToken]);
     let content;
-    if (isLoading) content = <Loading></Loading>;
+    if (isLoading) content = <Loading/>;
 
     if (!isLoading && isError) content = <div className="col-span-12">{error}</div>
 

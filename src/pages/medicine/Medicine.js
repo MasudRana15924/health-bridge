@@ -11,10 +11,9 @@ import { useState } from 'react';
 import { searched } from '../../state/filter/filterReducer';
 const Medicine = () => {
     const dispatch = useDispatch();
-    const { medicines } = useSelector(state => state.medicines.medicines);
-    const { isLoading } = useSelector(state => state.medicines);
+    const { medicines,isLoading } = useSelector(state => state.medicines.medicines);
     const { search } = useSelector(state => state.filter);
-
+  console.log(medicines);
     const [input, setInput] = useState(search);
     const handleSearch = (e) => {
         e.preventDefault();
@@ -25,6 +24,9 @@ const Medicine = () => {
     }, [dispatch, search])
     const { cartTotalQuantity } = useSelector((state) => state.cart);
     let content;
+    if(isLoading ===true && medicines?.length < 0){
+        content = <Loading></Loading>
+    }
     if (medicines?.length === 0) {
         content = <div className="col-span-12  ">
             <div class="alert alert-error shadow-lg text-start  mt-5 h-12 w-1/4 mx-auto">
@@ -33,7 +35,7 @@ const Medicine = () => {
             </div>
         </div>
     }
-    if (isLoading && !medicines) {
+    if (!isLoading && !medicines) {
         content = <Loading></Loading>
     }
     if (medicines?.length > 0) {

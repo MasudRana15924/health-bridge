@@ -32,7 +32,6 @@ export const myordersSlice = createSlice({
                 state.isLoading = true
                 state.orders = [];
                 state.isError = true;
-                state.error = action.payload.error?.message;
             })
     }
 });

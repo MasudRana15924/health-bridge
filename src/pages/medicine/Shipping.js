@@ -8,6 +8,7 @@ import { CiCircleMinus, CiCirclePlus, CiCircleRemove } from "react-icons/ci";
 import { Button, TextField } from '@mui/material';
 import { useState } from 'react';
 import { createOrder } from '../../state/order/orderSlice';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Shipping = () => {
     const navigate = useNavigate()
@@ -52,16 +53,16 @@ const Shipping = () => {
             dispatch(createOrder({ data, userToken }));
             dispatch(clearCart());
         } else {
-            // toast.error('Please enter your details', {
-            //     position: "top-right",
-            //     autoClose: 5000,
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     theme: "dark",
-            // });
+            toast.error('Please enter your details', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         }
 
     }
@@ -70,10 +71,7 @@ const Shipping = () => {
 
             label: 'Select Payment Method ',
         },
-        {
-            value: 'Cash On Delivery',
-            label: 'Cash On Delivery',
-        },
+
         {
             value: 'Bkash',
             label: 'Bkash',
@@ -83,14 +81,14 @@ const Shipping = () => {
             label: 'Nagad',
         },
     ];
-    const { order } = useSelector(state => state.order);
+    const {order } = useSelector(state => state.order);
     useEffect(() => {
         if (paymentInfo === 'Bkash' || paymentInfo === 'Nagad') {
             if (order[0]) {
                 window.location.replace(order[0].url);
             }
         }
-    }, [order, navigate, paymentInfo])
+    }, [order,paymentInfo])
 
     return (
         <div className="mt-20 lg:mt-52 lg:w-3/4 mx-auto mb-20 lg:flex">
@@ -182,6 +180,21 @@ const Shipping = () => {
                     <p className="mt-10 text-red-500 font-bold">Your Cart is Currently Empty</p>
                 </div>
             }
+            <ToastContainer
+                    position="top-right"
+                    autoClose={500}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+
+                />
+                {/* Same as */}
+                <ToastContainer />
         </div>
     );
 };

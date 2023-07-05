@@ -22,7 +22,7 @@ const DoctorsList = ({ doctor }) => {
                             alt={name}
                         />
                     }
-                    <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3">
+                    <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3 ">
                         <div className="flex mt-3">
                             <p className="font-semibold"> {name} </p>
 
@@ -48,7 +48,7 @@ const DoctorsList = ({ doctor }) => {
                 </div>
 
 
-                <div className="ml-5 lg:ml-0 text-start mr-10 mt-5 mb-5">
+                <div className=" lg:w-1/4 ml-5 lg:ml-0 text-start mr-10 mt-5 mb-5 ">
                     <p className="text-slate-600  text-md font-semibold" >
                         Works at {work}
                     </p>
