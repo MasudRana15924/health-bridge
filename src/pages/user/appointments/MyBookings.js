@@ -3,7 +3,7 @@ import { useReactToPrint } from "react-to-print";
 import { RxCross1 } from "react-icons/rx";
 import banner from '../../../images/main.png'
 const MyBookings = ({ booking }) => {
-    const { doctorname, doctorimage, date, schedule, bookingStatus, doctordegree, doctorwork, doctortitle } = booking;
+    const { doctorname, doctorimage, doctorfees, schedule, bookingStatus, doctordegree, doctorwork, doctortitle } = booking;
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
@@ -21,9 +21,16 @@ const MyBookings = ({ booking }) => {
                     </div>
                     <div className="text-start">
                         <p className="text-slate-600 text-md font-semibold mt-3" >
-                            {doctorname}
+                           {doctortitle} {doctorname}
+                        </p>
+                        <p className="text-slate-600 text-sm font-semibold mt-3" >
+                            {doctordegree}
+                        </p>
+                        <p className="text-slate-600 text-sm font-semibold mt-3" >
+                           Fees {doctorfees}
                         </p>
                     </div>
+
                 </div>
                 <div className=" text-start ml-5">
                     {/* <p className="text-slate-600 text-md font-semibold " >Appointment : {date}</p>

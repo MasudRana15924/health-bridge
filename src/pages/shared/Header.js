@@ -138,6 +138,11 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link to="/my-order" onClick={showMenu} className="text-sm py-3 text-gray-900 px-5   block">
+                                   My Order History
+                                </Link>
+                            </li>
+                            <li>
                                 <Link to="/my-booking" onClick={showMenu} className=" text-sm py-3 text-gray-900 px-5   block">
                                     Consultation History
                                 </Link>
@@ -160,6 +165,7 @@ const Header = () => {
                                     Change Password
                                 </Link>
                             </li>
+                            
                             <li>
                                 <Link to="/doctor-booking" onClick={showMenu} className="text-sm py-3 text-gray-900 px-5  block">
                                     Consultation History

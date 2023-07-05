@@ -42,7 +42,7 @@ const MyBooking = () => {
         content = appointment.map(booking => <MyBookings key={booking._id} booking={booking} />)
     }
     return (
-        <div className="p-10 bg-white mt-16 lg:mt-44 mb-20">
+        <div className="lg:p-10 bg-white mt-16 lg:mt-44 mb-20">
 
             <div className="w-full lg:w-3/4 lg:mx-auto flex justify-center">
                 <div className="hidden lg:block w-2/4  mb-5">
