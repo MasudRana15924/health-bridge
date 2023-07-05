@@ -83,7 +83,6 @@ const Shipping = () => {
             label: 'Nagad',
         },
     ];
-    console.log(paymentInfo);
     const { order } = useSelector(state => state.order);
     useEffect(() => {
         if (paymentInfo === 'Bkash' || paymentInfo === 'Nagad') {

@@ -59,6 +59,7 @@ import Cart from './pages/medicine/Cart';
 import Shipping from './pages/medicine/Shipping';
 import OrderPayment from './pages/payment/OrderPayment';
 import MyOrder from './pages/user/order/MyOrder';
+import AllOrderList from './pages/admin/order/AllOrderList';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -124,6 +125,7 @@ function App() {
             <Route path="/cart" element={<Cart></Cart>}></Route>
             <Route path="/shipping" element={<PrivateRoute><Shipping></Shipping></PrivateRoute>}></Route>
             <Route path="/order/payment/successfull/:tranId" element={<OrderPayment></OrderPayment>}></Route>
+            <Route path="/admin/user/order" element={<PrivateRoute><AllOrderList></AllOrderList></PrivateRoute>}> </Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>

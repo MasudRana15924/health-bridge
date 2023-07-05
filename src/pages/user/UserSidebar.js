@@ -100,8 +100,8 @@ const UserSidebar = () => {
                         </div>
                         <div className="flex mt-5">
                             <BsFillChatDotsFill className="mt-1 w-20 h-5"></BsFillChatDotsFill>
-                            <Link to="/chat">
-                                <h2 className="text-md font-semibold leading-6 text-gray-900">Chat</h2>
+                            <Link to="/admin/user/order">
+                                <h2 className="text-md font-semibold leading-6 text-gray-900">Order List</h2>
                             </Link>
                         </div>
 
@@ -110,10 +110,8 @@ const UserSidebar = () => {
                                 <button className="btn  ml-8 w-3/4 bg-slate-700 border-slate-200  hover:bg-slate-700" onClick={() => dispatch(logout())}>  Logout </button>
                             </Link>
                         </div>
-                    </div> :null
-                     
-                }
-                {
+                    </div> :<div>
+                    {
                     user?.role==='doctor'?<div className="card-body text-start">
                     <div className="flex ">
                         <AiOutlineUnorderedList className="mt-1 h-5 mr-3"></AiOutlineUnorderedList>
@@ -214,6 +212,10 @@ const UserSidebar = () => {
                     </div>
                 </div>
                 }
+                    </div>
+                     
+                }
+               
 
             </div>
         </div>
