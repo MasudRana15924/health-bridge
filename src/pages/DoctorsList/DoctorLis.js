@@ -50,12 +50,12 @@ const DoctorLis = () => {
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  mt-8">
                             <FilterStatus></FilterStatus>
                         </div>
-                        <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-3">
+                        {/* <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-3">
                             <h2 className="font-semibold text-2xl text-start lg:ml-64">Expert</h2>
                         </div>
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  ">
                             <FilterTags></FilterTags>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="w-3/4 mx-auto ">
                         <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-5">
@@ -85,8 +85,8 @@ const DoctorLis = () => {
                 {/* for small devices */}
                 <div className="pr-5 pl-5 mx-auto lg:hidden md:hidden flex justify-between mt-24 ">
 
-                   <h2 className="text-xl  leading-6 text-gray-900 mt-1">All Doctors </h2>
-                   
+                    <h2 className="text-xl  leading-6 text-gray-900 mt-1">All Doctors </h2>
+
                     {/* <button className="btn btn-sm bg-white text-gray-900" >Filter <BsFilterRight className="text-2xl"></BsFilterRight> </button> */}
                     <a href="#my_modal_8" className="btn btn-sm border-white bg-white text-gray-900 hover:bg-white ">Filter <BsFilterRight className="text-2xl"></BsFilterRight></a>
                 </div>
@@ -107,7 +107,7 @@ const DoctorLis = () => {
                             </div>
 
                         </div>
-                        <div className="flex  ml-5">
+                        {/* <div className="flex  ml-5">
                             <div>
                                 <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-3">
                                     <h2 className="font-semibold text-xl text-start lg:ml-64">Expert</h2>
@@ -128,9 +128,21 @@ const DoctorLis = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="ml-5">
-                        <div className=" w-full lg:w-3/4 lg:mx-auto">
+                            <div>
+                                <div className="">
+                                    <div className="w-full lg:w-3/4 lg:mx-auto mt-4">
+                                        <h2 className="font-semibold text-xl text-start lg:ml-64">Fees</h2>
+
+                                    </div>
+                                    <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
+                                        <FilterFeeses></FilterFeeses>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className=" w-full lg:w-3/4 lg:mx-auto">
                                 <h2 className=" font-semibold text-xl text-start lg:ml-64 ">Gender</h2>
                             </div>
                             <div className=" lg:block lg:w-3/4 lg:mx-auto ">
@@ -158,6 +170,7 @@ const DoctorLis = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

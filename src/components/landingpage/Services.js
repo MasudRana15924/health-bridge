@@ -5,7 +5,7 @@ import book from '../../images/booking.png'
 
 const Services = () => {
     return (
-        <div className="p-3 lg:p-0 lg:w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="hidden p-3 lg:p-0 lg:w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div >
                 <div className=" card  h-96 bg-base-100 shadow-xl">
                     <img src={find} alt="find" className="h-32 w-1/4 mx-auto mt-5" />

@@ -14,7 +14,8 @@ const navigation = [
     // { name: 'Home', to: '/home' },
     // { name: 'About Us', to: '/about' },
     // { name: 'Contact Us', to: '/contact' },
-    { name: 'Doctors', to: '/doctors' },
+    // { name: 'Doctors', to: '/doctors' },
+    // { name: 'Consultations', to: '/consultation' },
     { name: 'Nurses', to: "/nurses" },
     { name: 'Order Medicine', to: '/medicine' },
     { name: 'Insurance', to: '/insurance' },
@@ -33,6 +34,9 @@ const Header = () => {
     const showMenu = () => {
         setActive(!active)
     }
+    const handleReload = (e) => {
+        window.location.replace('/consultation')
+    }
     return (
         <header className="absolute inset-x-0 top-0 z-50">
             <nav className="flex items-center justify-between pr-3 lg:p-6 lg:px-8" aria-label="Global">
@@ -42,6 +46,7 @@ const Header = () => {
                             className="h-12 lg:h-16 w-auto "
                             src={logo}
                             alt=""
+                          
                         />
                     </Link>
                 </div>
@@ -57,8 +62,11 @@ const Header = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
+                    <Link onClick={handleReload} className="text-xl font-semibold leading-6 text-gray-900">
+                    Consultations
+                    </Link>
                     {navigation.map((item) => (
-                        <Link key={item.name} as={HashLink} to={item.to} className="text-xl font-semibold leading-6 text-gray-900">
+                        <Link key={item.name} as={HashLink} to={item.to}  className="text-xl font-semibold leading-6 text-gray-900">
                             {item.name}
                         </Link>
                     ))}
@@ -68,9 +76,9 @@ const Header = () => {
                         token ?
                             <Link to="/user-info">
                                 {
-                                    user.avatar.url? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" />:<p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
+                                    user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
                                 }
-                               
+
                                 {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                             </Link>
                             : <Link to="/user-signin" className="text-xl font-semibold leading-6 text-gray-900">
@@ -140,7 +148,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <Link to="/my-order" onClick={showMenu} className="text-sm py-3 text-gray-900 px-5   block">
-                                   My Order History
+                                    My Order History
                                 </Link>
                             </li>
                             <li>
@@ -166,7 +174,7 @@ const Header = () => {
                                     Change Password
                                 </Link>
                             </li>
-                            
+
                             <li>
                                 <Link to="/doctor-booking" onClick={showMenu} className="text-sm py-3 text-gray-900 px-5  block">
                                     Consultation History

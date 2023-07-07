@@ -61,6 +61,7 @@ import OrderPayment from './pages/payment/OrderPayment';
 import MyOrder from './pages/user/order/MyOrder';
 import AllOrderList from './pages/admin/order/AllOrderList';
 import Prescription from './pages/user/prescription/Prescription';
+import Filter from './components/landingpage/Filter';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -78,6 +79,7 @@ function App() {
           <Routes >
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
+            <Route path="/consultation" element={<Filter></Filter>}></Route>
             <Route path="/user-signin" element={< Login />}></Route>
             <Route path="/user-signup" element={< UserSignup />}></Route>
             <Route path="/activation/:activation_token" element={<Verify />} />

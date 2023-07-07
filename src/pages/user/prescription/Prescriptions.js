@@ -34,10 +34,10 @@ const Prescriptions = ({ booking }) => {
                             alt={doctorname}
                         />
                         <div>
-                            <p className="text-slate-600 text-md font-semibold mt-3" >
+                            <p className="text-slate-600 text-md font-semibold mt-3 mb-5" >
                                 {doctortitle} {doctorname}
                             </p>
-                            <Button onClick={handleOpen}>Open modal</Button>
+                            <Button onClick={handleOpen}>Download</Button>
                         </div>
                     </div>
 
