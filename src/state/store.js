@@ -53,6 +53,7 @@ import cartReducer from './medicine/cartSlice'
 import createOrderSlice from './order/orderSlice'
 import  myordersSlice  from "./user/order/myOrderSlice";
 import  adminAllOrdersSlice  from "./admin/order/allOrderSlice";
+import  myPrescriptionsSlice  from "./user/prescription/prescriptionSlice";
 const persistConfig = {
   key: "authentication",
   storage
@@ -115,6 +116,7 @@ const rootReducer = combineReducers({
   order:createOrderSlice,
   orders:myordersSlice,
   allOrders:adminAllOrdersSlice,
+  myPrescriptions:myPrescriptionsSlice
 });
 
 const store = configureStore({

@@ -187,6 +187,12 @@ const UserSidebar = () => {
                         </Link>
                     </div>
                     <div className="flex mt-5">
+                        <CiMedicalCase className="mt-1 h-5 mr-3"></CiMedicalCase>
+                        <Link to="/my-prescription">
+                            <h2 className="text-md font-semibold leading-6 text-gray-900">Prescription History</h2>
+                        </Link>
+                    </div>
+                    <div className="flex mt-5">
                         <BsMinecartLoaded className="mt-1 h-5 mr-3"></BsMinecartLoaded>
                         <Link to="/my-order">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">Order History</h2>

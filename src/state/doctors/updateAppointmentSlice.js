@@ -1,17 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { privatePut } from '../../utilities/apiCaller';
+import { privatePost } from '../../utilities/apiCaller';
 
 
 const initialState = {
-    updatePrescription:{},
+    newPrescription:{},
     isLoading: false,
     isError: false,
     error: ''
 }
-export const fetchUpdatePrescription = createAsyncThunk(
-    'doctor/fetchUpdatePrescription',
-    async ({data,userToken,_id}) => {
-            const appointments = await privatePut(`/doctor/appointment/${_id}`,userToken,data);
+export const fetchCreatePrescription = createAsyncThunk(
+    'doctor/fetchCreatePrescription',
+    async ({data,userToken}) => {
+            const appointments = await privatePost(`/create/prescription`,userToken,data);
             return appointments;
     }
 );
@@ -20,19 +20,18 @@ export const updatePrescriptionSlice = createSlice({
     initialState,
     extraReducers: (builder) => {
         builder
-        .addCase(fetchUpdatePrescription.pending,(state)=>{
+        .addCase(fetchCreatePrescription.pending,(state)=>{
             state.isError=false;
           state.isLoading=true
         })
-        .addCase(fetchUpdatePrescription.fulfilled,(state,action)=>{
+        .addCase(fetchCreatePrescription.fulfilled,(state,action)=>{
           state.isLoading=false
-          state.updatePrescription=action.payload;
+          state.newPrescription=action.payload;
         })
-        .addCase(fetchUpdatePrescription.rejected,(state,action)=>{
+        .addCase(fetchCreatePrescription.rejected,(state,action)=>{
             state.isLoading=false
-            state.updatePrescription={};
+            state.newPrescription={};
             state.isError=true;
-            state.error=action.error?.message;
         })
     }
 });

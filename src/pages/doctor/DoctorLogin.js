@@ -12,7 +12,6 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 const DoctorLogin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [agree, setAgree] = useState(false);
     const { error,loggeduser } = useSelector(
         (state) => state.userDetails
     );
@@ -52,31 +51,7 @@ const DoctorLogin = () => {
                                 <LockOpenIcon sx={{ color: 'action.active', mr: 2, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Password" variant="standard" className="w-full py-3 px-6" value={password} onChange={(e) => setPassword(e.target.value)} />
                             </Box>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center ml-2">
-                                    <input
-                                        id="agree"
-                                        name="agree"
-                                        type="checkbox"
-                                        className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
-                                        checked={agree}
-                                        onChange={(e) => setAgree(e.target.checked)}
-                                        required
-                                    />
-                                    <label
-                                        htmlFor="accept-terms"
-                                        className="ml-2 block text-sm text-gray-900"
-                                    >
-                                        Remember me
-                                    </label>
-                                </div>
-                                <div>
-                                    <Link to="/doctor-forgot-password">
-                                        <span className="text-sm tracking-wide text-blue-700 mt-5">Forgot password ?</span>
-                                    </Link>
-                                </div>
-                            </div>
-
+                        
                             <div>
                                 <button className=" btn btn-md w-full  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>

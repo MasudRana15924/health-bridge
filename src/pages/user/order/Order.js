@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 const Order = ({ orderr }) => {
     const { orders } = useSelector(state => state.orders.orders);
     return (
-        <div className="col-span-12  md:col-span-3  gap-4 lg:col-span-6">
+        <div className="card  col-span-12  md:col-span-3  gap-4 lg:col-span-6 ">
             <div className="flex ">
 
                 <div className="w-2/4">

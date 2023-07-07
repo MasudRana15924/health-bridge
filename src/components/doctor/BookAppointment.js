@@ -1,25 +1,41 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { createAppointments } from '../../state/appointments/appointmentsSlice';
+import { FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
 import { useEffect } from 'react';
-
 const BookAppointment = () => {
-    const navigate = useNavigate()
+    const genders = [
+        {
+
+            label: 'Select Gender ',
+        },
+        {
+            value: 'Male',
+            label: 'Male',
+        },
+        {
+            value: 'Female',
+            label: 'Female',
+        },
+    ];
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
     );
     const { doctor } = useSelector(state => state.doctor.doctor);
-    const  {appointments} = useSelector(state => state.appointments);
-    // const url=appointments[0].url;
-    
+    const { appointments } = useSelector(state => state.appointments);
     const userToken = loggeduser.token
-    const [patientname, setPname] = useState('');
-    const [patientemail, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const user = loggeduser.user
+    const [name, setName] = useState('');
+    const email = user.email;
+    const [gender, setGender] = useState('');
+    const [age, setAge] = useState('');
+    const [weight, setWeight] = useState('');
+    const [height, setHeight] = useState('');
+    const [problem, setProblem] = useState('');
     const doctortitle = doctor.title;
     const doctorname = doctor.name;
     const doctoremail = doctor.email;
@@ -28,18 +44,16 @@ const BookAppointment = () => {
     const doctorId = doctor._id;
     const doctordegree = doctor.degree;
     const doctorwork = doctor.work;
-    const url=doctor.url
-    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, phone ,url});
+    const meeturl = doctor.url
+    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, name, age, weight, height, meeturl, email ,gender,problem});
+
     const handleCreate = (e) => {
         e.preventDefault();
-
-        if (patientname && patientemail && phone ) {
+        if (name && age && weight && height && problem && gender) {
             dispatch(createAppointments({
                 data, userToken
             }));
 
-            //  window.location.replace(url)
-            
         } else {
             toast.error('Please enter your details', {
                 position: "top-right",
@@ -51,8 +65,7 @@ const BookAppointment = () => {
                 progress: undefined,
                 theme: "dark",
             });
-        }   
-       
+        }
     }
     useEffect(() => {
     
@@ -61,30 +74,41 @@ const BookAppointment = () => {
              console.log('url',appointments[0].url);
             //  navigate(appointments[0].url)
         }
-    }, [appointments, navigate])
-
+    }, [appointments])
     return (
         <div >
             {
                 token ?
 
                     <div className=" lg:w-1/4 mx-auto mt-24 lg:mt-48 mb-12">
-                        
+
                         <form action="" className="lg:mt-10 p-3" onSubmit={handleCreate}>
-
-                            <div className="">
-                               
-                                <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded lg:w-3/4 mx-auto w-full p-2 h-12" />
+                            <div className="mb-5">
+                                <TextField id="outlined-basic" variant="outlined" label="Full Name" className="w-full" value={name} onChange={(e) => setName(e.target.value)} />
                             </div>
                             <div>
-                          
-                                <input type="text" value={patientemail} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Patient Email" className="border border-gray-200 rounded lg:w-3/4 w-full p-2 h-12 mx-auto mt-5 mb-5" />
+                                <p id="demo-row-radio-buttons-group-label" className="text-start">Gender</p>
+                                  <input name="gender" type="radio"  value="Male" onChange={(e) => setGender(e.target.value)}></input> Male
+                                  <input type="radio" name="gender" value="Female" onChange={(e) => setGender(e.target.value)}></input> Female
+                            
                             </div>
-                            <div>
+                            <div className="mt-5">
+                                <TextField id="outlined-basic" variant="outlined" label="Age" className="w-full" value={age} onChange={(e) => setAge(e.target.value)} />
+                            </div>
+                            <div className="mt-5">
 
-                                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto " />
+                                <TextField id="outlined-basic" variant="outlined" label="Weight" className="w-full" value={weight} onChange={(e) => setWeight(e.target.value)} />
                             </div>
-                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-3/4 w-full text-white font-semibold text-center mb-5 ">Book Appointment </button>
+                            <div className="mt-5">
+
+                                <TextField id="outlined-basic" variant="outlined" label="Height" className="w-full" value={height} onChange={(e) => setHeight(e.target.value)} />
+                            </div>
+                            <div className="mt-5">
+
+                                <TextField id="outlined-basic" variant="outlined" label="Write your Problem" className="w-full" value={problem} onChange={(e) => setProblem(e.target.value)} />
+                            </div>
+
+                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-3/4 w-full text-white font-semibold text-center mb-5 ">Submit </button>
                         </form>
                     </div>
                     : <div>

@@ -60,6 +60,7 @@ import Shipping from './pages/medicine/Shipping';
 import OrderPayment from './pages/payment/OrderPayment';
 import MyOrder from './pages/user/order/MyOrder';
 import AllOrderList from './pages/admin/order/AllOrderList';
+import Prescription from './pages/user/prescription/Prescription';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -126,6 +127,7 @@ function App() {
             <Route path="/shipping" element={<PrivateRoute><Shipping></Shipping></PrivateRoute>}></Route>
             <Route path="/order/payment/successfull/:tranId" element={<OrderPayment></OrderPayment>}></Route>
             <Route path="/admin/user/order" element={<PrivateRoute><AllOrderList></AllOrderList></PrivateRoute>}> </Route>
+            <Route path="/my-prescription" element={<PrivateRoute><Prescription></Prescription></PrivateRoute>}> </Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>

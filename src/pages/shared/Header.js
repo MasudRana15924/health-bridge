@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../../images/main.png'
+// import logo from '../../images/main.png'
+import logo from '../../images/diu.png'
 import { FiMenu } from 'react-icons/fi'
 import './Shared.css'
 import { Link } from 'react-router-dom';

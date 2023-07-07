@@ -13,7 +13,6 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [agree, setAgree] = useState(false);
     const { error, loggeduser } = useSelector(
         (state) => state.userDetails
     );
@@ -52,31 +51,7 @@ const Login = () => {
                                 <LockOpenIcon sx={{ color: 'action.active', mr: 3, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Password" variant="standard" className="w-full py-3 px-6" value={password} onChange={(e) => setPassword(e.target.value)} />
                             </Box>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center">
-                                    <input
-                                        id="agree"
-                                        name="agree"
-                                        type="checkbox"
-                                        className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
-                                        checked={agree}
-                                        onChange={(e) => setAgree(e.target.checked)}
-                                        required
-                                    />
-                                    <label
-                                        htmlFor="accept-terms"
-                                        className="ml-2 block text-sm text-gray-900"
-                                    >
-                                        Remember me
-                                    </label>
-                                </div>
-                                <div>
-                                    <Link to="/user/password">
-
-                                        <span className="text-sm tracking-wide text-blue-700 mt-5">Forgot password ?</span>
-                                    </Link>
-                                </div>
-                            </div>
+                           
                             
                             <div className="mt-5 text-start">
                                 <span className="text-sm tracking-wide text-gray-400 text-start">Are you a Doctor ?</span> <Link to="/doctor/login"> <span className="text-sm font-semibold leading-6 text-gray-600">Login as a doctor</span>
