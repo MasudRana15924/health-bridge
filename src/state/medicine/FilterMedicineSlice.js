@@ -22,7 +22,7 @@ export const filtermedicinesSlice = createSlice({
         builder
             .addCase(fetchFilterMedicne.pending, (state) => {
                 state.isError = false;
-                state.isLoading = true
+                state.isLoading = true;
             })
             .addCase(fetchFilterMedicne.fulfilled, (state, action) => {
                 state.medicines = action.payload;

@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategory } from '../../state/category/categorySlice';
 import Filters from './Filters';
+import Loading from '../../pages/loader/Loading';
+import Loader from '../../pages/loader/Loader';
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -11,11 +13,10 @@ const Filter = () => {
         dispatch(fetchCategory());
     }, [dispatch])
     let content;
-    // if (!isLoading && !categories) {
-    //     content = <Loading></Loading>
-    // }
+    if (isLoading && !categories.length) content = <Loading></Loading>
+
     if (!isLoading && categories) {
-        content = categories?.map((category) => <Filters key={category._id} title={category.title}></Filters>)
+        content = categories?.map((category) => <Filters key={category._id} title={category.title} image={category.image}></Filters>)
     }
 
     return (

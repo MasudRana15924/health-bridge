@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { InputAdornment } from '@mui/material';
 const DoctorLogin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -42,18 +43,45 @@ const DoctorLogin = () => {
                         {
                             error ?    <Alert severity="error" className="mt-5">{error}</Alert>:null
                         }
-                        <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
-                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                        <form action="" className="space-y-6 py-6 mt-6" onSubmit={registerSubmit}>
+                        {/* <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                 <EmailIcon sx={{ color: 'action.active', mr: 2, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Email" variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                 <LockOpenIcon sx={{ color: 'action.active', mr: 2, my: 0.0 }} />
                                 <TextField id="input-with-sx" label="Password" variant="standard" className="w-full py-3 px-6" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            </Box>
-                        
+                            </Box> */}
+                         <TextField
+                                id="input-with-icon-textfield"
+                                label="Email"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <EmailIcon/>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                variant="outlined"
+                                className="w-full py-3 px-6"
+                                value={email} onChange={(e) => setEmail(e.target.value)}
+                            />
+                             <TextField
+                                id="input-with-icon-textfield"
+                                label="Password"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <LockOpenIcon/>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                variant="outlined"
+                                className="w-full py-3 px-6"
+                                value={password} onChange={(e) => setPassword(e.target.value)}
+                            />
                             <div>
-                                <button className=" btn btn-md w-full  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 mb-5">
+                                <button className=" btn btn-md w-full bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>
                                 </button>
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/doctor/signup"> <span className="text-sm font-semibold leading-6 text-gray-900">Create new account</span>

@@ -4,7 +4,7 @@ import { expertRemoved, expertSelected } from '../../state/filter/filterReducer'
 import { Link } from 'react-router-dom';
 
 
-const Filters = ({ title }) => {
+const Filters = ({ title, image }) => {
     const dispatch = useDispatch();
     const { experts } = useSelector(state => state.filter)
 
@@ -19,14 +19,16 @@ const Filters = ({ title }) => {
         }
     }
     return (
-        <div className=" col-span-12 md:col-span-4 lg:col-span-3 ">
-    
-            <Link to="/doctors">
-            <p className= "text-blue-500 text-xl lg:text-2xl font-bold text-center pt-5 lg:pt-10 bg-base-100 h-20 lg:h-28 card shadow-xl" onClick={handleSelect}>
-                {title}
-                </p>
-            </Link>
-          
+        <div className=" col-span-12 md:col-span-4 lg:col-span-4 card shadow-xl ">
+            <div className="flex ">
+                <img src={image?.url} alt="" className="h-32 w-32" />
+                <Link to="/doctors">
+                    <p className="text-blue-500 text-xl lg:text-2xl font-bold text-start bg-base-100 mt-10 ml-5" onClick={handleSelect}>
+                        {title}
+                    </p>
+                </Link>
+            </div>
+
         </div>
     );
 };

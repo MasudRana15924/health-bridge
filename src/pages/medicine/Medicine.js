@@ -6,12 +6,13 @@ import Medicines from './Medicines';
 import Loading from '../loader/Loading';
 import { Link } from 'react-router-dom';
 import { BsBag, BsSearch } from "react-icons/bs";
-import { Button, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import { useState } from 'react';
 import { searched } from '../../state/filter/filterReducer';
 const Medicine = () => {
     const dispatch = useDispatch();
-    const { medicines,isLoading } = useSelector(state => state.medicines.medicines);
+    const { medicines } = useSelector(state => state.medicines.medicines);
+    const {isLoading } = useSelector(state => state.medicines);
     const { search } = useSelector(state => state.filter);
   console.log(medicines);
     const [input, setInput] = useState(search);
@@ -24,7 +25,7 @@ const Medicine = () => {
     }, [dispatch, search])
     const { cartTotalQuantity } = useSelector((state) => state.cart);
     let content;
-    if(isLoading ===true && medicines?.length < 0){
+    if(isLoading && medicines?.length < 0){
         content = <Loading></Loading>
     }
     if (medicines?.length === 0) {
