@@ -11,6 +11,7 @@ import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { InputAdornment } from '@mui/material';
 const UserSignup = () => {
   const dispatch = useDispatch();
   const { success } = useSelector(
@@ -52,7 +53,7 @@ const UserSignup = () => {
     <div>
 
       <div className="mt-5 lg:mt-12 flex flex-col items-center justify-center min-h-screen ">
-        <div className="lg:w-3/12 ">
+        <div className="lg:w-4/12 2xl:w-3/12">
           <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Register</h2>
           <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
             <div className="lg:w-1/4 mx-auto mt-12">
@@ -69,39 +70,63 @@ const UserSignup = () => {
               />
              </div>
             </div>
-            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+            {/* <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
               <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
               <TextField id="input-with-sx" label="Name" variant="standard" className="w-full py-3 px-6"  value={name} onChange={(e) => setName(e.target.value)}/>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+            </Box> */}
+            {/* <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
               <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
               <TextField id="input-with-sx" label="Email" variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
               <LockOpenIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
               <TextField id="input-with-sx" label="Password" variant="standard" className="w-full py-3 px-6" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            </Box>
-            <div className="flex items-center justify-between ">
-              <div className="flex items-center mt-5">
-                <input
-                  id="agree"
-                  name="agree"
-                  type="checkbox"
-                  className="h-4 w-4 text-violet-700 focus:ring-violet-700 border-gray-300 ml-1"
-                  checked={agree}
-                  onChange={(e) => setAgree(e.target.checked)}
-                  required
-                />
-                <label
-                  htmlFor="accept-terms"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Agreed with the terms and condition
-                </label>
-              </div>
-            </div>
+            </Box> */}
+             <TextField
+                                id="input-with-icon-textfield"
+                                label="Name"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <AccountCircle/>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                variant="outlined"
+                                className="w-full py-3 px-6"
+                                value={name} onChange={(e) => setName(e.target.value)}
+                            />
+                        <TextField
+                                id="input-with-icon-textfield"
+                                label="Email"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <EmailIcon/>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                variant="outlined"
+                                className="w-full py-3 px-6"
+                                value={email} onChange={(e) => setEmail(e.target.value)}
+                            />
+                             <TextField
+                                id="input-with-icon-textfield"
+                                label="Password"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <LockOpenIcon/>
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                variant="outlined"
+                                className="w-full py-3 px-6"
+                                value={password} onChange={(e) => setPassword(e.target.value)}
+                            />
+        
             <div>
-              <button className=" btn btn-md w-full  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 mb-5">
+              <button className=" btn btn-md w-full bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
                 <span className="font-semibold text-white text-lg">Signup</span>
               </button>
               <span className="text-sm tracking-wide text-gray-400 mt-5">Already have a account ?</span> <Link to="/user-signin"><span className="text-sm font-semibold leading-6 text-gray-900">Please Login</span>

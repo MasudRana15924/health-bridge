@@ -38,7 +38,7 @@ const Login = () => {
     return (
         <div>
             <div className=" flex flex-col items-center justify-center mt-24 lg:mt-52 mb-20">
-                <div className="lg:w-3/12 ">
+                <div className="lg:w-5/12 2xl:w-3/12">
                     <div className=" p-8">
                         <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Login</h2>
                         {
