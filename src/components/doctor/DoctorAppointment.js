@@ -56,7 +56,7 @@ const DoctorAppointment = ({ booking }) => {
     }
 
     return (
-        <div className=" col-span-12  md:col-span-3 border roundedlg:col-span-4">
+        <div className=" col-span-12  md:col-span-3 border rounded lg:col-span-6 2xl:col-span-4">
             <div className="">
                 <div className="flex">
                     <div className="">
@@ -78,31 +78,15 @@ const DoctorAppointment = ({ booking }) => {
                 <div className=" text-start ml-5" >
                     <p className="text-slate-400 text-md font-semibold nb-10" >Problem</p>
                     <p className="text-slate-600 text-md font-semibold " >{problem}</p>
-                    <a href="#my_modal_8" className="text-center text-green-600 pt-2 font-semibold mt-20">Make Prescription</a>
-                    <Button onClick={handleOpen}>Open modal</Button>
+                    {/* <a href="#my_modal_8" className="text-center text-green-600 pt-2 font-semibold mt-20">Make Prescription</a> */}
+                    <Button onClick={handleOpen}>Set Prescription</Button>
                 </div>
                 <div>
 
                 </div>
 
             </div>
-            {/* <div className="modal w-full" id="my_modal_8">
-                    <div className="modal-box w-full">
-                        <h3 className="absolute left-5">Write Prescription</h3>
-
-                        <form className="mt-5" onSubmit={handleCreate}>
-                            <div className="flex">
-                                <input type="text" placeholder='Medicine Name' className="border h-6 "/>
-                                <input type="text" placeholder='For How many Days'/>
-                                <input type="text" placeholder='Total Quantity'/>
-                            </div>
-                            <button className="btn btn-sm bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 w-2/4 mt-5">Submit</button>
-                        </form>
-                        <div className="modal-action">
-                            <a href="#" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">   <RxCross1 className="text-xl text-black"></RxCross1></a>
-                        </div>
-                    </div>
-                </div> */}
+        
 
             <Modal
                 keepMounted

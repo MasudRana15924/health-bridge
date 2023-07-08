@@ -38,8 +38,8 @@ const Cart = () => {
                     <div className="">
                         {cart.cartItems &&
                             cart.cartItems.map((cartItem) => (
-                                <div className="w-full pl-3 pr-3 lg:w-3/4 mx-auto">
-                                    <div className="w-full lg:w-2/4 mx-auto border flex justify-between mb-10">
+                                <div className="w-full pl-3 pr-3 lg:w-full 2xl:w-3/4 mx-auto">
+                                    <div className="w-full lg:w-2/4 2xl:w-2/4 mx-auto  flex justify-between mb-10">
                                         <div className="w-2/4">
                                             <img src={cartItem.image.url} alt={cartItem.name} className="h-32 w-44" />
                                         </div>
@@ -56,7 +56,7 @@ const Cart = () => {
                                                     <span className="ml-10"> = {cartItem.price * cartItem.cartQuantity} tk</span>
                                                 </h3>
                                             </div>
-                                            <div className="mt-5 mr-20 lg:mr-64 ">
+                                            <div className="mt-5 mr-20 lg:mr-44 2xl:mr-64">
                                                 <button className='mr-5' onClick={() => handleAdd(cartItem)}>
                                                     <CiCirclePlus className="text-3xl text-blue-400"></CiCirclePlus>
                                                 </button>
@@ -71,17 +71,21 @@ const Cart = () => {
                                 </div>
                             ))}
 
-                        <div className="w-3/4 lg:w-1/4 mx-auto flex justify-between ">
-                            <div className="mt-10">
+                        <div className="w-3/4 lg:w-2/4 2xl:w-1/4 mx-auto flex justify-between ">
+                            <div className="mt-24">
                             <Button  variant="contained" size="small" color="error" className="btn-sm" onClick={() => handleClear()}>
                                 Clear Cart
                             </Button>
                             </div>
 
-                            <div className="ml-5 ">
+                            <div className="">
                                 <div className="mb-4">
+                                    <span className="text-black mr-5 font-semibold">Shipping Charge </span>
+                                    <span className="text-black mr-5 font-bold">60 BDT</span>
+                                </div>
+                                <div className="mb-8">
                                     <span className="text-black mr-5 font-semibold">Subtotal</span>
-                                    <span className="text-black mr-5">{cart.cartTotalAmount} BDT</span>
+                                    <span className="text-black font-bold">{cart.cartTotalAmount+60} BDT</span>
                                 </div>
                                 <Link to="/shipping" className="mt-5">
                                     <Button variant="contained" size="small" color="success" className="bt-sm" >Check out</Button>

@@ -36,13 +36,13 @@ const DoctorAppointments = () => {
         content = appointment.map(booking => <DoctorAppointment key={booking._id} booking={booking} />)
     }
     return (
-        <div className="lg:p-10 bg-white mt-24 lg:mt-32 mb-20">
+        <div className="lg:p-10 bg-white mt-24 lg:mt-44 mb-20">
         <div className="">
-            <div className="w-full lg:w-3/4 lg:mx-auto flex justify-center">
+            <div className="w-full lg:w-full 2xl:w-3/4 lg:mx-auto flex justify-center">
                 <div className="hidden lg:block w-1/4 text-end  mb-5">
                     <UserSidebar></UserSidebar>
                 </div>
-                <div className="w-full m-5 lg:w-3/4 lg:m-0">
+                <div className="w-full m-5 lg:w-3/4 lg:ml-12">
                     <h2 className="text-start lg:text-2xl ">Consultations History</h2>
                     <div className="w-full grid grid-cols-12 mt-5 lg:mt-10">
                         {content}

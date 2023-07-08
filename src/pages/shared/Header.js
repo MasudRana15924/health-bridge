@@ -15,7 +15,7 @@ const navigation = [
     // { name: 'About Us', to: '/about' },
     // { name: 'Contact Us', to: '/contact' },
     // { name: 'Doctors', to: '/doctors' },
-    // { name: 'Consultations', to: '/consultation' },
+    { name: 'Consultations', to: '/consultation' },
     { name: 'Nurses', to: "/nurses" },
     { name: 'Order Medicine', to: '/medicine' },
     { name: 'Insurance', to: '/insurance' },
@@ -62,9 +62,9 @@ const Header = () => {
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-6 2xl:gap-x-12">
-                    <Link onClick={handleReload} className="text-xl font-semibold leading-6 text-gray-900">
+                    {/* <Link  className="text-xl font-semibold leading-6 text-gray-900">
                         Consultations
-                    </Link>
+                    </Link> */}
                     {navigation.map((item) => (
                         <Link key={item.name} as={HashLink} to={item.to} className="text-xl font-semibold leading-6 text-gray-900">
                             {item.name}

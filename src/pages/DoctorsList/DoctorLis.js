@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 import FilterStatus from './FilterStatus';
 import { Alert } from '@mui/material';
+import ClearAllOutlinedIcon from '@mui/icons-material/ClearAllOutlined';
 const DoctorLis = () => {
     const dispatch = useDispatch();
     const { doctors, isLoading, isError, error } = useSelector(state => state.filterDoctors.filterDoctors);
@@ -41,13 +42,17 @@ const DoctorLis = () => {
     const showMenu = () => {
         setActive(!active)
     }
+    const handleReload = (e) => {
+        window.location.replace('/consultation')
+    }
 
     return (
 
             <div className="lg:flex justify-between 2xl:w-3/4 mx-auto gap-4 lg:mt-10 md:mt-10 mb-20">
                 <div className="hidden lg:block lg:w-1/4 mt-24 ">
-                   
+                <p className="text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className="mr-5 text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
                 <div className=" lg:w-3/4 mx-auto ml-14">
+                    
                     <FilterStatus></FilterStatus>
 
                     {/* <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-3">

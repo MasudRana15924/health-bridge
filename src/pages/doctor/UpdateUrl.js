@@ -46,12 +46,12 @@ const UpdateUrl = () => {
 
   return (
     <div className="p-10 bg-white mt-16 lg:mt-44 mb-20">
-      <div class="w-full lg:w-2/4 mx-auto flex justify-center">
-        <div className="hidden lg:block w-3/4  mb-5">
+      <div class="w-full lg:w-full 2xl:w-3/4 mx-auto flex justify-center">
+        <div className="hidden lg:block w-1/4  mb-5">
           <UserSidebar></UserSidebar>
         </div>
-        <div className="w-full lg:w-full lg:m-0">
-          <div class="bg-white lg:w-3/4">
+        <div className="w-full lg:w-3/4 lg:ml-12">
+          <div class="bg-white lg:w-2/4">
             <h2 class=" mb-5 text-2xl font-medium  text-start mt-10">Update Meet Link</h2>
             <form onSubmit={registerSubmit}>
               <div class="mb-4">
