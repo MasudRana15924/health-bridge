@@ -38,15 +38,15 @@ const Header = () => {
         window.location.replace('/consultation')
     }
     return (
-        <header className="absolute inset-x-0 top-0 z-50">
-            <nav className="flex items-center justify-between pr-3 lg:p-6 lg:px-8" aria-label="Global">
+        <header className="absolute inset-x-0 top-0 z-50 lg:pl-2 lg:pr-2 lg:w-full mx-auto">
+            <nav className="flex items-center justify-between pr-3 lg:py-4 lg:pr-0" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
                             className="h-12 lg:h-16 w-auto "
                             src={logo}
                             alt=""
-                          
+
                         />
                     </Link>
                 </div>
@@ -61,12 +61,12 @@ const Header = () => {
                         />
                     </button>
                 </div>
-                <div className="hidden lg:flex lg:gap-x-12">
+                <div class="hidden lg:flex lg:gap-x-6 2xl:gap-x-12">
                     <Link onClick={handleReload} className="text-xl font-semibold leading-6 text-gray-900">
-                    Consultations
+                        Consultations
                     </Link>
                     {navigation.map((item) => (
-                        <Link key={item.name} as={HashLink} to={item.to}  className="text-xl font-semibold leading-6 text-gray-900">
+                        <Link key={item.name} as={HashLink} to={item.to} className="text-xl font-semibold leading-6 text-gray-900">
                             {item.name}
                         </Link>
                     ))}
@@ -98,11 +98,11 @@ const Header = () => {
                         <Link to="/" className=" text-sm  text-gray-900 px-5 py-3   block " onClick={showMenu}>Home</Link>
                     </li>
                     <li>
-                        <Link to="/about" className="text-sm  text-gray-900 px-5 py-3  block" onClick={showMenu}>About</Link>
+                        <Link onClick={handleReload} className="text-sm  text-gray-900 px-5 py-3   block ">
+                            Consultations
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/contact" className="text-sm  text-gray-900 px-5 py-3   block" onClick={showMenu}>Contact Us</Link>
-                    </li>
+
                     <li>
                         <Link to="/doctors" className="text-sm  text-gray-900 px-5 py-3   block " onClick={showMenu}>Doctors</Link>
                     </li>
@@ -154,6 +154,16 @@ const Header = () => {
                             <li>
                                 <Link to="/my-booking" onClick={showMenu} className=" text-sm py-3 text-gray-900 px-5   block">
                                     Consultation History
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/my-prescription">
+                                    <h2 className=" text-sm py-3 text-gray-900 px-5   block">Prescription History</h2>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/my/hire-nurses">
+                                    <h2 className=" text-sm py-3 text-gray-900 px-5   block">Hired Nurses History</h2>
                                 </Link>
                             </li>
 

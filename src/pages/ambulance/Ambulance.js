@@ -20,7 +20,7 @@ const Ambulance = () => {
         let seconds=parseInt(Math.floor(total_seconds % 60));
         let minutes=parseInt(Math.floor(total_minutes % 60));
         let hours=parseInt(Math.floor(total_hours % 24));
-        return <div className="flex justify-between p-5  lg:w-1/4 mx-auto lg:mt-10 mb-10">
+        return <div className="flex justify-between p-5  lg:w-2/4 2xl:w-1/4 mx-auto lg:mt-10 mb-10">
                <div>
                      <p className="text-4xl text-violet-500">{days}</p>
                      <p className="font-semibold leading-6 text-gray-900">Days</p>

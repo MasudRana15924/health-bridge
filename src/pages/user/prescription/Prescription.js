@@ -41,11 +41,11 @@ const Prescription = () => {
     return (
         <div className="lg:p-10 bg-white mt-16 lg:mt-44 mb-20">
 
-        <div className="w-full lg:w-3/4 lg:mx-auto flex justify-center">
-            <div className="hidden lg:block w-2/4  mb-5">
+        <div className="w-full lg:w-full 2xl:w-3/4 lg:mx-auto flex justify-center">
+            <div className="hidden lg:block w-1/4 2xl:w-1/4  mb-5">
                 <UserSidebar></UserSidebar>
             </div>
-            <div className="w-full m-5 lg:full lg:m-0">
+            <div className="w-full m-5 lg:full lg:ml-12">
                 <h2 className="text-start lg:text-2xl ">Previous Prescription History</h2>
                 <div className="w-full grid grid-cols-12 mt-5 lg:mt-10 gap-5">
                     {content}

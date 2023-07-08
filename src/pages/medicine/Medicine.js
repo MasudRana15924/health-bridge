@@ -47,9 +47,9 @@ const Medicine = () => {
     }
     return (
         <section className="pt-12 mb-10 lg:mt-16">
-            <div className="flex justify-between pl-5 pr-5 mt-3 w-full lg:w-2/4 mx-auto ">
+            <div className="flex justify-between pl-5 pr-5 mt-3 w-full lg:w-3/4 2xl:w-2/4 mx-auto ">
                
-                <form className='w-3/4 lg:w-2/4 flex'>
+                <form className='w-3/4 lg:w-2/4 2xl:w-2/4 flex'>
                     <input
                         className="outline-none border border-blue-200  w-full h-10 pl-5"
                         type="search"
@@ -86,7 +86,7 @@ const Medicine = () => {
                 </Button>
             </div>
             <div
-                className="grid grid-cols-12 gap-4 p-3 lg:p-0 lg:w-2/4 mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-12 " >
+                className="grid grid-cols-12 gap-4 p-3 lg:p-0 lg:w-3/4 2xl:w-2/4 mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-12 " >
                 {content}
             </div>
         </section>

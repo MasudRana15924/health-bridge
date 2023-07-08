@@ -9,7 +9,7 @@ const MyBookings = ({ booking }) => {
         content: () => componentRef.current,
     });
     return (
-        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4">
+        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 ">
             <div ref={componentRef}>
                 <div className="flex">
                     <div className="">
@@ -19,7 +19,7 @@ const MyBookings = ({ booking }) => {
                             alt={doctorname}
                         />
                     </div>
-                    <div className="text-start">
+                    <div className="text-start 2xl:ml-5">
                         <p className="text-slate-600 text-md font-semibold mt-3" >
                            {doctortitle} {doctorname}
                         </p>

@@ -27,9 +27,9 @@ const UserSidebar = () => {
     }
     return (
         <div className="">
-            <div className="card w-3/4 bg-base-100 shadow-xl">
-                <div className="flex text-start ml-8">
-                    <div className="avatar mb-5 mt-5 ml-5">
+            <div className="card w-full bg-base-100 shadow-xl">
+                <div className="flex text-start ">
+                    <div className="avatar mb-5 mt-5 ">
                         <div className="w-16 h-16 rounded-full  ring-offset-base-100 ring-offset-2">
                         {
                                     user?.avatar ? <img src={user.avatar.url} alt="" />:  <img src='' alt="" className="border rounded-full h-20 w-20"/>
@@ -42,7 +42,7 @@ const UserSidebar = () => {
                     </div>
                 </div>
             </div>
-            <div className="card w-3/4 bg-base-100 shadow-xl mt-5">
+            <div className="card w-full bg-base-100 shadow-xl mt-5">
                 {
                     user?.role === 'admin' ? <div className="card-body text-start">
 

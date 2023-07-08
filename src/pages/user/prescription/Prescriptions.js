@@ -24,7 +24,7 @@ const Prescriptions = ({ booking }) => {
         p: 4,
     };
     return (
-        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4">
+        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4 2xl:col-span-4">
             <div >
                 <div className="border">
                     <div className="flex">

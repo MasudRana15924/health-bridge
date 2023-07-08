@@ -43,7 +43,7 @@ const Changepassword = () => {
   return (
     <div className="p-10 bg-white mt-16 lg:mt-44 mb-20">
 
-      <div class="w-full lg:w-2/4 mx-auto flex justify-center">
+      <div class="w-full lg:w-3/4 2xl:w-2/4 mx-auto flex justify-center">
         <div className="hidden lg:block w-3/4  mb-5">
           <UserSidebar></UserSidebar>
         </div>

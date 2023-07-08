@@ -23,7 +23,7 @@ const Filters = ({ title, image }) => {
             <div className="flex ">
                 <img src={image?.url} alt="" className="h-32 w-32" />
                 <Link to="/doctors">
-                    <p className="text-blue-500 text-xl lg:text-2xl font-bold text-start bg-base-100 mt-10 ml-5" onClick={handleSelect}>
+                    <p className="text-blue-500 text-xl lg:text-xl font-bold text-start bg-base-100 mt-10 " onClick={handleSelect}>
                         {title}
                     </p>
                 </Link>

@@ -50,11 +50,11 @@ const UserDetails = () => {
     return (
         <div className="p-10 bg-white  mt-16 lg:mt-44 mb-20">
 
-            <div className="w-full lg:w-2/4 mx-auto flex justify-center">
+            <div className="w-full lg:w-3/4 2xl:w-2/4 mx-auto flex justify-center">
                 <div className="hidden lg:block w-3/4  mb-5">
                     <UserSidebar></UserSidebar>
                 </div>
-                <div className="w-full  lg:w-full lg:m-0">
+                <div className="w-full  lg:w-full lg:m-0 mt-12">
                     {
                         user?.role === 'doctor' ? <form onSubmit={registerSubmit}>
                             <div className="w-full  lg:w-full lg:m-0">
@@ -95,7 +95,7 @@ const UserDetails = () => {
 
                             </div>
                         </form> : <form onSubmit={updateUser}>
-                            <div className="w-full  lg:w-full lg:m-0">
+                            <div className="w-full  lg:w-full lg:m-0 mt-24">
                                 <div className="avatar mr-28">
                                     <div className="w-32 rounded-full  ">
                                         {

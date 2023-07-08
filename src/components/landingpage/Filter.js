@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategory } from '../../state/category/categorySlice';
 import Filters from './Filters';
 import Loading from '../../pages/loader/Loading';
-import Loader from '../../pages/loader/Loader';
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -20,9 +19,9 @@ const Filter = () => {
     }
 
     return (
-        <div className="container  mt-20 lg:w-3/4 mx-auto lg:mt-40 mb-20">
-            <p className="text-start ml-5 lg:ml-44 text-xl lg:text-3xl text-gray-900 font-bold mb-5 ">Please select a speaciality</p>
-            <div className="grid grid-cols-12 gap-4 lg:gap-12 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto lg:mt-32">
+        <div className="p-5 lg:p-0 2xl:p-0 lg:w-3/4 2xl:w-2/4 mx-auto mb-20 lg:mt-40 mt-10">
+            <p className="text-start ml-5  text-xl lg:text-3xl 2xl:text-3xl text-gray-900 font-bold mb-5 ">Please select a speaciality</p>
+            <div className="grid grid-cols-12 gap-4 lg:gap-12 m-3 md:m-0 lg:m-0  lg:w-full 2xl:w-full mx-auto lg:mt-16">
                 {content}
             </div>
         </div>

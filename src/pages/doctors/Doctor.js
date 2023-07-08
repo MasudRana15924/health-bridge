@@ -33,12 +33,12 @@ const Doctor = () => {
     }
     return (
 
-        <section className="doctors-section pt-12 mb-5 lg:mb-10 mt-5">
-            <div className="lg:flex lg:justify-between lg:w-3/4 lg:mx-auto ">
+        <section className="doctors-section mb-5 lg:mb-10 lg:p-5 2xl:p-0">
+            <div className="lg:flex lg:justify-between lg:w-3/4 2xl:w-3/4 mx-auto ">
                 <h1 className="text-start ml-3 lg:ml-0 font-semibold lg:font-bold text-2xl lg:text-3xl ">Our Best Doctors</h1>
             </div>
             <div
-                className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-16 " >
+                className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto 2xl:w-3/4 2xl:mx-auto lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-16" >
                 {content}
                 <div className="col-span-12 ">
                     {visible && (doctors?.length > 0 && (

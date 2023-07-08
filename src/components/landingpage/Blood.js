@@ -80,8 +80,8 @@ const Blood = () => {
 
     }
     return (
-        <div className="mt-28 lg:flex  lg:mt-64 md:mt-64 mb-10 w-3/4 mx-auto">
-            <div className="">
+        <div className=" p-5 lg:p-0 mt-28 lg:flex  lg:mt-40 md:mt-64 mb-10 lg:w-full 2xl:w-3/4 mx-auto">
+            <div className="lg:w-3/4 lg:ml-5">
                 <img src={bloodImg} alt="" className="hidden lg:block h-96 full" />
                 <div className="lg:mt-16">
                     <p className="text-md lg:text-4xl text-start text-blue-600 font-bold w-3/4 ">Benefits Of Blood Donate</p>
