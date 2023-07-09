@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { privatePost } from '../../utilities/apiCaller';
+import { privatePost, publicPost } from '../../utilities/apiCaller';
 
 
 const initialState = {
@@ -11,7 +11,9 @@ const initialState = {
 export const fetchCreatePrescription = createAsyncThunk(
     'doctor/fetchCreatePrescription',
     async ({data,userToken}) => {
-            const appointments = await privatePost(`/create/prescription`,userToken,data);
+        console.log(data);
+            // const appointments = await privatePost(`/create/prescription`,userToken,data);
+            const appointments = await publicPost(`/create/prescription`,data);
             return appointments;
     }
 );

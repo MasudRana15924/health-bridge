@@ -3,7 +3,7 @@ import { useReactToPrint } from "react-to-print";
 import logo from '../../../images/diu.png'
 import { Box, Button, Modal,} from '@mui/material';
 const Prescriptions = ({ booking }) => {
-    const { name, age, height, weight, gender, problem, createdAt, doctorname, doctortitle, doctordegree, doctorwork, doctorAdvice, followUp, medInfo } = booking;
+    const { name, age, height, weight, gender, problem, createdAt, doctorname, doctortitle, doctordegree, doctorwork, doctorAdvice, followUp, medicines } = booking;
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
@@ -78,8 +78,8 @@ const Prescriptions = ({ booking }) => {
 
                         </div>
                         <p className="mt-10 text-blue-500">Medicine Informartion</p>
-                        <div className=" flex justify-between gap-4">
-                            {medInfo && medInfo.map((info) => (
+                        <div className="  gap-4">
+                            {medicines && medicines.map((info) => (
                                 <div className="flex justify-between gap-4">
                                     <p> {info.medname}</p>
                                     <p>daily eat {info.dailyUse} times</p>
