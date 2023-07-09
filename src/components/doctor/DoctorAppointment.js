@@ -166,7 +166,10 @@ const DoctorAppointment = ({ booking }) => {
                             </div>
                         </div>
                         <div className="w-1/4 mx-auto mt-12">
-                            <Button variant="contained" className="w-full" onClick={handleCreate}>Submit</Button>
+                            {/* <Button variant="outlined" >Submit</Button> */}
+                            <Button variant="contained" size="small" onClick={handleCreate} className="w-full bg-blue-500" >
+                                Submit
+                            </Button>
                         </div>
                     </form>
 
