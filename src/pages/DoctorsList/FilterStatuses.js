@@ -22,7 +22,6 @@ const FilterStatuses = ({title}) => {
         <p className={style} onClick={handleSelect}>
         <input type="checkbox" className="mr-3"/>
             Online Now
-            
             </p>
     </div>
     );

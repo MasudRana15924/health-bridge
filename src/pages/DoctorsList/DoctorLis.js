@@ -43,14 +43,16 @@ const DoctorLis = () => {
         setActive(!active)
     }
     const handleReload = (e) => {
-        window.location.replace('/consultation')
+        window.location.replace('/doctors')
     }
 
     return (
 
             <div className="lg:flex justify-between 2xl:w-3/4 mx-auto gap-4 lg:mt-10 md:mt-10 mb-20">
                 <div className="hidden lg:block lg:w-1/4 mt-24 ">
-                <p className="text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className="mr-5 text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                <div className="">
+                <p className="mr-12 text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                </div>
                 <div className=" lg:w-3/4 mx-auto ml-14">
                     
                     <FilterStatus></FilterStatus>
@@ -63,24 +65,24 @@ const DoctorLis = () => {
                         </div> */}
                 </div>
                     <div className="w-3/4 mx-auto ">
-                        <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-5">
-                            <h2 className="font-semibold text-2xl mt-1 text-start ">Gender</h2>
+                        <div className=" w-full lg:w-3/4 lg:mx-auto mt-5">
+                            <h2 className="font-semibold text-xl mt-1 text-start ">Gender</h2>
                         </div>
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  ">
                             <GendersLists></GendersLists>
                         </div>
                     </div>
                     <div className="w-3/4 mx-auto ">
-                        <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-5">
-                            <h2 className="font-semibold text-2xl mt-1 text-start "> Fees</h2>
+                        <div className=" w-full lg:w-3/4 lg:mx-auto mt-5">
+                            <h2 className="font-semibold text-xl mt-1 text-start "> Fees</h2>
                         </div>
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  ">
                             <FilterFeeses></FilterFeeses>
                         </div>
                     </div>
                     <div className="w-3/4 mx-auto ">
-                        <div className="h-12 w-full lg:w-3/4 lg:mx-auto mt-5">
-                            <h2 className="font-semibold text-2xl mt-1 text-start ">Ratings</h2>
+                        <div className=" w-full lg:w-3/4 lg:mx-auto mt-5">
+                            <h2 className="font-semibold text-xl mt-1 text-start ">Ratings</h2>
                         </div>
                         <div className="hidden lg:block lg:w-3/4 lg:mx-auto  ">
                             <Ratings></Ratings>
@@ -98,7 +100,11 @@ const DoctorLis = () => {
                 {/* small devices filter */}
                 <div className="modal" id="my_modal_8">
                     <div className="modal-box">
+                        <div className= "">
+                        <p className="mr-48 text-md font-thin text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-500 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                        </div>
                         <div className="modal-action">
+                       
                             {
                                 doctors?.length ? <p className="text-blue-400 mr-40">All Doctors {doctors.length}</p> : null
                             }
@@ -106,7 +112,7 @@ const DoctorLis = () => {
                                 <RxCross1 className="text-black text-xl" ></RxCross1>
                             </a>
                         </div>
-                        <div className="ml-5">
+                        <div className="">
                             <div className="lg:block lg:w-3/4 lg:mx-auto  ">
                                 <FilterStatus></FilterStatus>
                             </div>
@@ -134,11 +140,11 @@ const DoctorLis = () => {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="ml-5">
+                        <div className="">
                             <div>
                                 <div className="">
                                     <div className="w-full lg:w-3/4 lg:mx-auto mt-4">
-                                        <h2 className="font-semibold text-xl text-start lg:ml-64">Fees</h2>
+                                        <h2 className="font-semibold text-md text-start lg:ml-64">Fees</h2>
 
                                     </div>
                                     <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
@@ -148,14 +154,14 @@ const DoctorLis = () => {
                             </div>
 
                             <div className=" w-full lg:w-3/4 lg:mx-auto">
-                                <h2 className=" font-semibold text-xl text-start lg:ml-64 ">Gender</h2>
+                                <h2 className=" font-semibold text-md text-start lg:ml-64 ">Gender</h2>
                             </div>
                             <div className=" lg:block lg:w-3/4 lg:mx-auto ">
                                 <GendersLists></GendersLists>
                             </div>
                             <div className="">
                                 <div className=" w-full lg:w-3/4 lg:mx-auto">
-                                    <h2 className="font-semibold text-xl text-start lg:ml-64">Ratings</h2>
+                                    <h2 className="font-semibold text-md text-start lg:ml-64">Ratings</h2>
                                 </div>
                                 <div className=" lg:block lg:w-3/4 lg:mx-auto  ">
                                     <Ratings></Ratings>

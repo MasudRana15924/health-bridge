@@ -16,7 +16,7 @@ const Prescriptions = ({ booking }) => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 1000,
+        
         height: 700,
         bgcolor: 'background.paper',
         border: '2px solid #000',
@@ -37,7 +37,8 @@ const Prescriptions = ({ booking }) => {
                             <p className="text-slate-600 text-md font-semibold mt-3 mb-5" >
                                 {doctortitle} {doctorname}
                             </p>
-                            <Button onClick={handleOpen}>Download</Button>
+                            {/* <Button onClick={handleOpen}>Download</Button> */}
+                            <Button onClick={handlePrint} >Download</Button>
                         </div>
                     </div>
 
@@ -50,7 +51,7 @@ const Prescriptions = ({ booking }) => {
                 aria-labelledby="keep-mounted-modal-title"
                 aria-describedby="keep-mounted-modal-description"
             >
-                <Box sx={style} >
+                <Box sx={style} className=" hidden lg:block lg:w-2/4">
                     <div ref={componentRef} className="pr-12 pl-12">
 
                         <div className="">
@@ -60,14 +61,14 @@ const Prescriptions = ({ booking }) => {
                             <p>Daffodil Smart City</p>
                             <p>Ashulia,Savar,Dhaka</p>
                         </div>
-                        <div className=" text-center text-blue-500 text-3xl">
+                        <div className=" text-center text-blue-500 text-md lg:text-3xl">
                             <p>Medical Prescription</p>
                         </div>
-                        <div className="mt-8 flex justify-between gap-4">
+                        <div className="mt-8 lg:flex justify-between gap-4">
                             <p>Patient : {name}</p>
                             <p>Prescription Date :{createdAt}</p>
                         </div>
-                        <div className="mt-3 flex justify-between gap-4">
+                        <div className="mt-3 lg:flex justify-between gap-4">
                             <p>Gender : {gender}</p>
                             <p>Age : {age}</p>
                             <p>Weight : {weight}</p>
@@ -78,7 +79,7 @@ const Prescriptions = ({ booking }) => {
 
                         </div>
                         <p className="mt-10 text-blue-500">Medicine Informartion</p>
-                        <div className="  gap-4">
+                        <div className=" gap-4">
                             {medicines && medicines.map((info) => (
                                 <div className="flex justify-between gap-4">
                                     <p> {info.medname}</p>
@@ -99,60 +100,13 @@ const Prescriptions = ({ booking }) => {
                         </div>
                     </div>
                     <div className="w-2/4 mx-auto mt-12">
-                        <Button variant="contained" className="w-full" onClick={handlePrint} >Contained</Button>
+                        <Button variant="contained" className="w-full" onClick={handlePrint} >Download</Button>
                     </div>
 
 
                 </Box>
             </Modal>
-            {/* <a href="#my_modal_8" className="bg-green-500 h-10 text-center text-white pt-2 font-semibold">See Prescription</a>
-        
-            <div className="modal" id="my_modal_8">
-                <div className="modal-box">
 
-                    <div ref={componentRef}>
-                        <div>
-                            <img
-                                // src={banner}
-                                className="w-full h-16"
-                                alt={doctorname}
-                            />
-                        </div>
-                        <div className="flex justify-between m-10">
-
-                            <div className="">
-                                <img
-                                    // src={doctorimage}
-                                    className="doctor-image m-3 ml-3 border rounded"
-                                    alt={doctorname}
-                                />
-                            </div>
-                            <div className="text-start">
-                                <p className="text-slate-600 text-md font-semibold mt-3" >
-                                    {doctortitle}   {doctorname}
-                                </p>
-                                <p className=" mt-2" >
-                                    {doctordegree}
-                                </p>
-                                <p>
-                                    Works at {doctorwork}
-                                </p>
-                            </div>
-                        </div>
-                        <div className=" text-start ml-10">
-
-                            <p className="text-slate-400 text-md font-semibold " >Prescription</p>
-                            <p className="text-gray-900 text-md w-2/4 " >{booking.prescription}</p>
-                        </div>
-                    </div>
-                   <button onClick={handlePrint} className="print__button btn btn-sm bg-slate-600 border-slate-600 hover:bg-slate-600 hover:border-slate-600 w-1/4 mx-auto mb-5 mt-12">Download</button>
-                   
-
-                    <div className="modal-action">
-                        <a href="#" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">   <RxCross1 className="text-xl text-black"></RxCross1></a>
-                    </div>
-                </div>
-            </div> */}
         </div>
     );
 };
