@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../loader/Loading';
 import DoctorsList from './DoctorsList';
 import { useEffect } from 'react';
-import FilterTags from './FilterTags';
 import { fetchFilterDoctors } from '../../state/filter/filterSlice';
 import FilterFeeses from './FilterFeeses';
 import GendersLists from '../DoctorsList/GendersLists';
 import Ratings from './Ratings';
 import { BsFilterRight } from "react-icons/bs";
-import { useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 import FilterStatus from './FilterStatus';
 import { Alert } from '@mui/material';
@@ -38,10 +36,6 @@ const DoctorLis = () => {
     if (!isLoading && !isError && doctors?.length > 0) {
         content = doctors.map(doctor => <DoctorsList key={doctor._id} doctor={doctor} />)
     }
-    const [active, setActive] = useState(false);
-    const showMenu = () => {
-        setActive(!active)
-    }
     const handleReload = (e) => {
         window.location.replace('/doctors')
     }
@@ -51,9 +45,9 @@ const DoctorLis = () => {
             <div className="lg:flex justify-between 2xl:w-3/4 mx-auto gap-4 lg:mt-10 md:mt-10 mb-20">
                 <div className="hidden lg:block lg:w-1/4 mt-24 ">
                 <div className="">
-                <p className="mr-12 text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                <p className="mr-12 lg:mr-5 text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
                 </div>
-                <div className=" lg:w-3/4 mx-auto ml-14">
+                <div className=" lg:w-3/4 mx-auto ml-12">
                     
                     <FilterStatus></FilterStatus>
 

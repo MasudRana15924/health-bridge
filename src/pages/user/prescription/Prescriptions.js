@@ -9,7 +9,6 @@ const Prescriptions = ({ booking }) => {
         content: () => componentRef.current,
     });
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const style = {
         position: 'absolute',

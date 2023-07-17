@@ -5,13 +5,13 @@ const Nurse = ({nurse}) => {
     const { name,fees,images } = nurse;
 
     return (
-        <div className="bg-white border col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 ">
+        <div className="bg-white  col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 ">
         <div className="w-full flex flex-col ">
             <div className="relative">
                 <Link to={`/nurse/${nurse._id}`}>
                     <img
                         src={images[0].url}
-                        className="w-full h-48"
+                        className="mx-auto w-full h-32 lg:h-48 border rounded-lg border-gray-100"
                         alt={name}
                     />
                 </Link>

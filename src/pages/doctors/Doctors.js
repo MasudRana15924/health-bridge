@@ -14,7 +14,7 @@ const Doctors = ({ doctor }) => {
                     {
                      avatar?.url?<img
                         src={avatar.url }
-                        className="mx-auto w-3/4 h-32 lg:h-48 "
+                        className="mx-auto w-full h-32 lg:h-48 border rounded-lg border-gray-100"
                         alt={name}
                     />: <img
                     src={imgAvatar}

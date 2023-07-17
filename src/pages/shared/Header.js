@@ -43,7 +43,7 @@ const Header = () => {
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
-                            className="h-12 lg:h-16 w-auto "
+                            className=" ml-5 h-10 lg:ml-0 lg:h-16 w-auto "
                             src={logo}
                             alt=""
 

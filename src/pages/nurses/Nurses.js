@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilterNurses } from '../../state/nurses/nursesSlices';
 import Loading from '../loader/Loading';
 import Nurse from './Nurse';
+import { Rings } from 'react-loader-spinner';
 const locations = [
     "Uttara",
     "Dhanmondi",
@@ -19,7 +20,8 @@ const Nurses = () => {
         setVisible(visible + 4);
     };
     const dispatch = useDispatch();
-    const { nurses, isLoading, isError, error } = useSelector(state => state.filterNurses.filterNurses);
+    const { nurses,isError, error } = useSelector(state => state.filterNurses.filterNurses);
+    const {  isLoading} = useSelector(state => state.filterNurses);
     useEffect(() => {
         dispatch(fetchFilterNurses({ location }));
     }, [dispatch, location])
@@ -42,9 +44,9 @@ const Nurses = () => {
         content = nurses.slice(0, visible).map(nurse => <Nurse key={nurse._id} nurse={nurse} />)
     }
     return (
-        <section id="#nurses" className="doctors-section mb-10 md:mt-24 lg:mt-24">
+        <section id="#nurses" className="doctors-section mb-10 md:mt-24 lg:mt-4">
             <div className="mt-12 lg:pt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
-                <h1 className="text-start ml-5 lg:ml-0 lg:font-bold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
+                <h1 className="text-start ml-5 lg:ml-0 font-semibold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
                 <div className="hidden">
                     {locations?.map((exp) => (
 
@@ -58,17 +60,32 @@ const Nurses = () => {
                     ))}
                 </div>
             </div>
-            <div
+            {
+                 isLoading ? <div className="w-2/4 lg:w-1/4 mx-auto flex mt-10">
+
+                 <Rings
+                     height={40}
+                     width={40}
+                     color="red"
+                     visible={true}
+                     secondaryColor="green"
+                     className="border"
+
+                 />
+                 <p className="ml-1 mt-2 text-gray-900">please wait a sec</p>
+             </div>:<div
                 className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-16 " >
                 {content}
 
                 <div className="col-span-12 ">
                     {visible && (nurses?.length > 0 && (
-                        <button onClick={loadMore} className="btn btn-sm bg-violet-600 border-violet-600 mx-auto  mb-5">Load More</button>
+                        <button onClick={loadMore} className="btn btn-sm bg-blue-400 border-blue-400 mx-auto  mb-5">Load More</button>
                     ))
                     }
                 </div>
             </div>
+            }
+            
         </section>
     );
 };

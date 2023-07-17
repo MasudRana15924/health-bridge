@@ -17,12 +17,12 @@ code {
 }
 
 .doctors-section {
-  background-color: #f8f9fa !important;
+  /* background-color: #f8f9fa !important; */
 }
 
 .doctors-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s; */
   /* height: 380px; */
 }
 .doctor-image{
@@ -33,7 +33,7 @@ code {
 
 
 .blogs {
-  background-color: #f8f9fa !important;
+  /* background-color: #f8f9fa !important; */
 
 }
 .rocket{

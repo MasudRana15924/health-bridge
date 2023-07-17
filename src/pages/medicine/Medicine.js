@@ -9,6 +9,7 @@ import { BsBag, BsSearch } from "react-icons/bs";
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { searched } from '../../state/filter/filterReducer';
+import { Rings } from 'react-loader-spinner';
 const Medicine = () => {
     const dispatch = useDispatch();
     const { medicines } = useSelector(state => state.medicines.medicines);
@@ -85,10 +86,25 @@ const Medicine = () => {
                     Reset
                 </Button>
             </div>
-            <div
+            {
+                   isLoading ? <div className="w-2/4 lg:w-1/4 mx-auto flex mt-10">
+
+                   <Rings
+                       height={40}
+                       width={40}
+                       color="red"
+                       visible={true}
+                       secondaryColor="green"
+                       className="border"
+
+                   />
+                   <p className="ml-1 mt-2 text-gray-900">please wait a sec</p>
+               </div>:<div
                 className="grid grid-cols-12 gap-4 p-3 lg:p-0 lg:w-3/4 2xl:w-2/4 mx-auto  lg:px-0 min-h-[300px] mt-10 md:mt-16 lg:mt-12 " >
                 {content}
             </div>
+            }
+            
         </section>
     );
 };
