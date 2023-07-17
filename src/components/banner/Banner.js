@@ -4,8 +4,8 @@ import bannerImg from '../../images/imhh (1).jpg'
 const Banner = () => {
 
     return (
-       <div className="lg:flex mt-24 ">
-        <div className="w-3/4">
+       <div className="lg:flex mt-8 lg:mt-24 ">
+        <div className="w-full lg:w-3/4">
             <img src={bannerImg} alt="" className="w-full "/>
         </div>
          <div className="w-full bg-white navbar-section">
