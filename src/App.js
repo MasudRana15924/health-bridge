@@ -74,6 +74,7 @@ function App() {
       {loading ? <div>
         <Loader></Loader>
       </div> : <div className="App">
+      
         <BrowserRouter>
           <Header></Header>
           <Routes >
@@ -133,6 +134,7 @@ function App() {
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
+      
       </div>}
     </div>
   );

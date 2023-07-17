@@ -48,7 +48,7 @@ const Changepassword = () => {
           <UserSidebar></UserSidebar>
         </div>
         <div className=" w-full m-5 lg:w-full lg:m-0">
-          <div class="bg-white lg:w-3/4">
+          <div class="bg-white lg:w-3/4 lg:ml-12">
             <h2 class=" mb-5 text-2xl font-medium  text-start mt-10">Change Password</h2>
             {
               error? <Alert severity="error" className="mt-5 mb-5 text-start">{error}</Alert> :null

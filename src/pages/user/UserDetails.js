@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UserSidebar from './UserSidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateProfile } from '../../state/user/updateprofile/updateProfileSlice';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { TextField } from '@mui/material';
 const UserDetails = () => {
     const { loggeduser } = useSelector(
@@ -18,7 +18,7 @@ const UserDetails = () => {
     const [gender, setGender] = useState("");
     const [phone, setPhone] = useState("");
     const [birthdate, setBirthdate] = useState("");
-    const data = ({ name, gender, phone, birthdate, avatar })
+    const data = ({ name, email })
     const registerSubmit = (e) => {
         e.preventDefault();
         dispatch(updateProfile({ data, userToken }));
@@ -94,7 +94,7 @@ const UserDetails = () => {
                                 <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500">Update</button>
 
                             </div>
-                        </form> : <form onSubmit={updateUser}>
+                        </form> : <form onSubmit={registerSubmit}>
                             <div className="w-full  lg:w-full lg:m-0 mt-24">
                                 <div className="avatar mr-28">
                                     <div className="w-32 rounded-full  ">
@@ -111,12 +111,26 @@ const UserDetails = () => {
                                 <div className="w-3/4 mx-auto mt-5">
                                     <TextField id="input-with-sx" label={user.email} variant="standard" className="w-full py-3 px-6" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
-                                <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500">Update</button>
+                                <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500" onClick={registerSubmit}>Update</button>
                             </div>
                         </form>
                     }
                 </div>
             </div>
+            <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+        {/* Same as */}
+        <ToastContainer />
         </div>
     );
 };

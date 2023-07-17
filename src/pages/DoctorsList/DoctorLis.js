@@ -45,9 +45,9 @@ const DoctorLis = () => {
             <div className="lg:flex justify-between 2xl:w-3/4 mx-auto gap-4 lg:mt-10 md:mt-10 mb-20">
                 <div className="hidden lg:block lg:w-1/4 mt-24 ">
                 <div className="">
-                <p className="mr-12 lg:mr-5 text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                <button className="btn btn-sm bg-white hover:bg-white mr-12 lg:mr-5 text-md font-bold text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-700 h-10"></ClearAllOutlinedIcon> Reset Filter </button>
                 </div>
-                <div className=" lg:w-3/4 mx-auto ml-12">
+                <div className=" lg:w-3/4 mx-auto lg:ml-12 2xl:ml-14">
                     
                     <FilterStatus></FilterStatus>
 
@@ -95,7 +95,7 @@ const DoctorLis = () => {
                 <div className="modal" id="my_modal_8">
                     <div className="modal-box">
                         <div className= "">
-                        <p className="mr-48 text-md font-thin text-gray-900 mb-5" onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-500 h-10"></ClearAllOutlinedIcon> Reset Filter </p>
+                        <button className="mr-48 text-md font-thin text-gray-900 " onClick={handleReload}> <ClearAllOutlinedIcon className=" text-red-500 h-10"></ClearAllOutlinedIcon> Reset Filter </button>
                         </div>
                         <div className="modal-action">
                        

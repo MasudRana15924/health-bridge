@@ -28,7 +28,7 @@ const Doctor = () => {
     }
     return (
 
-        <section className="doctors-section mb-5 lg:mb-10 lg:p-5 2xl:p-0">
+        <section className="mt-12 lg:mt-0 doctors-section mb-5 lg:mb-10 lg:p-5 2xl:p-0">
             <div className="lg:flex lg:justify-between lg:w-3/4 2xl:w-3/4 mx-auto ">
                 <h1 className="text-start ml-3 lg:ml-0 font-semibold  text-2xl lg:text-3xl ">Our Best Doctors</h1>
             </div>

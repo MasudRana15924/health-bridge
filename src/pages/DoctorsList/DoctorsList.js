@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoPrimitiveDot } from "react-icons/go";
 import imgAvatar from '../../images/avatar.jpg'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 const DoctorsList = ({ doctor }) => {
     const { name, work, expert, degree, fees,avatar, isActive, experience } = doctor;
 
@@ -13,7 +15,7 @@ const DoctorsList = ({ doctor }) => {
 
                     {
                         avatar?.url ? <img
-                            src={avatar.url}
+                            src={avatar.url || <Skeleton /> }
                             className="doctor-image m-3 ml-3 border rounded"
                             alt={name}
                         /> : <img
@@ -24,20 +26,20 @@ const DoctorsList = ({ doctor }) => {
                     }
                     <div className=" w-full text-start ml-5 lg:ml-3 md:ml-3 ">
                         <div className="flex mt-3">
-                            <p className="font-semibold"> {name} </p>
+                            <p className="font-semibold"> {name || <Skeleton /> } </p>
 
                             {
                                 isActive === true ? <GoPrimitiveDot className="text-green-600 mt-1"></GoPrimitiveDot> : null
                             }
                         </div>
                         <p className="text-slate-600  text-md " >
-                            {degree}
+                            {degree || <Skeleton /> } 
                         </p>
                         <p className="text-slate-400  text-md mt-3" >
                             Specialities
                         </p>
                         <p className=" text-md " >
-                            {expert}
+                            {expert || <Skeleton /> }
                         </p>
                        <div className="mt-5">
                        {/* {
@@ -50,7 +52,7 @@ const DoctorsList = ({ doctor }) => {
 
                 <div className=" lg:w-1/4 ml-5 lg:ml-0 text-start mr-10 mt-5 mb-5 ">
                     <p className="text-slate-600  text-md font-semibold" >
-                        Works at {work}
+                        Works at {work || <Skeleton /> }
                     </p>
 
                     {/* <p className="text-slate-600  text-md font-semibold mt-2" >
@@ -62,7 +64,7 @@ const DoctorsList = ({ doctor }) => {
                                 Experience
                             </p>
                             <p className=" text-md text-black" >
-                                {experience} Years
+                                {experience || <Skeleton /> } Years
                             </p>
                         </div>
                         <div>
@@ -75,7 +77,7 @@ const DoctorsList = ({ doctor }) => {
                         </div>
                     </div>
                     <p className="text-slate-600  text-md font-semibold flex gap-2 mt-2" >
-                        < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>{fees} BDT
+                        < FaRegMoneyBillAlt className="text-2xl"></FaRegMoneyBillAlt>{fees || <Skeleton /> } BDT
                     </p>
 
                 </div>
