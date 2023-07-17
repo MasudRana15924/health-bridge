@@ -52,11 +52,11 @@ const UserSignup = () => {
   return (
     <div>
 
-      <div className="mt-5 lg:mt-12 flex flex-col items-center justify-center min-h-screen ">
-        <div className="lg:w-4/12 2xl:w-3/12">
+      <div className="flex flex-col items-center justify-center mt-16 lg:mt-44">
+        <div className="p-5 lg:p-0 lg:w-4/12 2xl:w-3/12">
           <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Register</h2>
           <form action="" className="space-y-6 py-6 " onSubmit={registerSubmit}>
-            <div className="lg:w-1/4 mx-auto mt-12">
+            <div className="lg:w-1/4 mx-auto ">
               <div className="w-1/4 mx-auto lg:w-full">
               <img src={avatarPreview} alt="Avatar Preview" className="h-16 w-16 mb-5 border rounded-full" />
               </div>
