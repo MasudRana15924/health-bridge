@@ -6,16 +6,16 @@ import './User.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { createLogin } from '../../state/user/Login/loginSlice';
 import Alert from '@mui/material/Alert';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { InputAdornment } from '@mui/material';
-import { AccountCircle } from '@mui/icons-material';
+import { Rings } from 'react-loader-spinner';
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { error, loggeduser } = useSelector(
+    const { error, loggeduser, isLoading } = useSelector(
         (state) => state.userDetails
     );
     const user = loggeduser.user
@@ -59,7 +59,7 @@ const Login = () => {
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            <EmailIcon/>
+                                            <EmailIcon />
                                         </InputAdornment>
                                     ),
                                 }}
@@ -67,13 +67,13 @@ const Login = () => {
                                 className="w-full py-3 px-6"
                                 value={email} onChange={(e) => setEmail(e.target.value)}
                             />
-                             <TextField
+                            <TextField
                                 id="input-with-icon-textfield"
                                 label="Password"
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            <LockOpenIcon/>
+                                            <LockOpenIcon />
                                         </InputAdornment>
                                     ),
                                 }}
@@ -87,9 +87,24 @@ const Login = () => {
                                 </Link>
                             </div>
                             <div>
-                                <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                {
+                                    isLoading ? <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                        <Rings
+                                            height={40}
+                                            width={60}
+                                            color="red"
+                                            visible={true}
+                                            secondaryColor="red"
+                                            className="border"
+
+                                        />
+                                    </button> : <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                        <span className="font-semibold text-white text-lg">Login</span>
+                                    </button>
+                                }
+                                {/* <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
+                                </button> */}
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/user-signup"> <span className="text-sm font-semibold leading-6 text-gray-900">Create new account</span>
                                 </Link>
                             </div>

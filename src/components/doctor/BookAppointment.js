@@ -4,23 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { createAppointments } from '../../state/appointments/appointmentsSlice';
-import { FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
 import { useEffect } from 'react';
+import { TextField } from '@mui/material';
 const BookAppointment = () => {
-    const genders = [
-        {
-
-            label: 'Select Gender ',
-        },
-        {
-            value: 'Male',
-            label: 'Male',
-        },
-        {
-            value: 'Female',
-            label: 'Female',
-        },
-    ];
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails

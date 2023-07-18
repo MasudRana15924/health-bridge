@@ -3,7 +3,7 @@ import { FaRegMoneyBillAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const HireNurses = ({hire}) => {
-    const { nurseId,nursename, nurseimage, nursefees,  date,bookingStatus } =hire;
+    const { nurseId,nursename, nurseimage, nursefees,  date } =hire;
     return (
         <div className="card col-span-12 sm:col-span-6 md:col-span-3 lg:col-span-3 2xl:col-span-4 ">
         <div className="card-body border ">

@@ -6,7 +6,6 @@ import { createSignUp } from '../../state/user/signupSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
@@ -18,7 +17,6 @@ const UserSignup = () => {
     (state) => state.signup
   );
   const navigate = useNavigate()
-  const [agree, setAgree] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { privatePost, publicPost } from '../../utilities/apiCaller';
+import {publicPost } from '../../utilities/apiCaller';
 
 
 const initialState = {
