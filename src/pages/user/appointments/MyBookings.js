@@ -9,13 +9,13 @@ const MyBookings = ({ booking }) => {
         content: () => componentRef.current,
     });
     return (
-        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 ">
+        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-6  2xl:col-span-3 ">
             <div ref={componentRef}>
                 <div className="flex">
                     <div className="">
                         <img
                             src={doctorimage}
-                            className="doctor-image m-3 ml-3 border rounded"
+                            className="doctor-image m-3 border rounded"
                             alt={doctorname}
                         />
                     </div>

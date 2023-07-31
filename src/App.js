@@ -88,7 +88,7 @@ function App() {
             <Route exact path="/password/reset/:token" element={<Resetpassword></Resetpassword>} />
             <Route path="/user/change/password" element={<PrivateRoute><Changepassword /></PrivateRoute>}></Route>
             <Route path="/user/updateinfo" element={<PrivateRoute><UpdateInfo /></PrivateRoute>}></Route>
-            <Route path="/user/updateprofile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
+            <Route path="/user/update/profile" element={<PrivateRoute><UpdateProfile /></PrivateRoute>}></Route>
             <Route path="/user-info" element={<PrivateRoute>< UserDetails /></PrivateRoute>}></Route>
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/signup" element={< DoctorSignup />}></Route>

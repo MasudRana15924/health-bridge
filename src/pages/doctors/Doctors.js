@@ -27,11 +27,11 @@ const Doctors = ({ doctor }) => {
 
                 <div className="hidden lg:block md:block text-start m-5">
                     <Link to={`/doctor/${doctor._id}`} >
-                        <p className="text-sm font-semibold leading-6 text-gray-900" >
+                        <p className="text-xs font-medium lg:text-sm lg:font-medium 2xl:text-sm 2xl:font-semibold leading-6 text-gray-900" >
                            {title} {name}
                         </p>
                     </Link>
-                    <p className="text-sm font-semibold leading-6 text-gray-900" >
+                    <p className="text-sm font-semibold leading-6 text-gray-900 mt-2" >
                         {expert}
                     </p>
                     <p className="text-sm font-semibold leading-6 text-gray-900" >

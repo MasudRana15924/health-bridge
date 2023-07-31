@@ -36,12 +36,12 @@ const Payment = () => {
 
             <AiOutlineCheckCircle className="text-9xl w-2/4 mx-auto text-emerald-400"></AiOutlineCheckCircle>
             {/* <p className=" lg:mt-10 text-4xl  lg:w-2/4 mx-auto text-orange-400 mb-3">Payment Success</p> */}
-            <p className=" lg:mt-10 lg:text-4xl font-semibold lg:w-2/4 mx-auto text-gray-900 mb-3">Please wait 5 minutes Doctor will call you</p>
-            <p className="text-red-800 ml-24 lg:ml-32">{getFormatedTime(time)}</p>
-            <p className=" lg:mt-5 text-2xl  lg:w-2/4 mx-auto text-red-400 mb-3">Don't Refresh</p>
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer" className=" mt-3 lg:mt-5 text-md  lg:w-2/4 mx-auto text-blue-500">
+            <p className=" lg:mt-10 lg:text-xl font-semibold lg:w-2/4 mx-auto text-gray-900 mb-3">Please wait 5 minutes Doctor will call you</p>
+            <p className="text-red-800 ml-24 lg:ml-0">{getFormatedTime(time)}</p>
+            {/* <p className=" lg:mt-5 text-2xl  lg:w-2/4 mx-auto text-red-400 mb-3">Don't Refresh</p> */}
+            {/* <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener noreferrer" className=" mt-3 lg:mt-5 text-md  lg:w-2/4 mx-auto text-blue-500">
                 Check your email for video call link
-            </a>
+            </a> */}
             <br />
             <Link to="/my-booking">
                 <button className=" mt-5 btn w-40  bg-emerald-400 border-emerald-400 hover:bg-emerald-400 hover:border-emerald-400">Done</button></Link>

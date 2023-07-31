@@ -82,13 +82,22 @@ const Login = () => {
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
 
+                            <div className="flex justify-between">
                             <div className="mt-5 text-start">
                                 <span className="text-sm tracking-wide text-gray-400 text-start">Are you a Doctor ?</span> <Link to="/doctor/login"> <span className="text-sm font-semibold leading-6 text-gray-600">Login as a doctor</span>
                                 </Link>
                             </div>
+                            <div className="mt-5">
+                                <Link to="/user/password">
+
+                                    <span className="text-sm tracking-wide text-blue-700 mt-10">Forgot password ?</span>
+                                 
+                                </Link>
+                            </div>
+                            </div>
                             <div>
                                 {
-                                    isLoading ? <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                    isLoading ? <button className=" btn btn-md w-full  bg-white border-white hover:bg-white hover:border-white mb-5">
                                         <Rings
                                             height={40}
                                             width={60}

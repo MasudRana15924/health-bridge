@@ -54,6 +54,7 @@ import createOrderSlice from './order/orderSlice'
 import  myordersSlice  from "./user/order/myOrderSlice";
 import  adminAllOrdersSlice  from "./admin/order/allOrderSlice";
 import  myPrescriptionsSlice  from "./user/prescription/prescriptionSlice";
+import userDetailsSlice from "./user/details/userDetailsSlice";
 const persistConfig = {
   key: "authentication",
   storage
@@ -67,6 +68,7 @@ const persistedReducer = persistReducer(persistConfig, loginReducer);
 const rootReducer = combineReducers({
   userDetails: persistedReducer,
   signup: signUpSlice,
+  userdetails:userDetailsSlice,
   doctors: doctorsSlice,
   doctor:doctorSlice,
   reviews:reviewSlice,
