@@ -100,7 +100,7 @@ const DoctorLis = () => {
                         <div className="modal-action">
                        
                             {
-                                doctors?.length ? <p className="text-blue-400 mr-40">All Doctors {doctors.length}</p> : null
+                                doctors?.length ? <p className="text-blue-400 mr-32">All Doctors {doctors.length}</p> : null
                             }
                             <a href="#" className="btn btn-sm border-none text-2xl bg-white text-gray-900 hover:bg-white ">
                                 <RxCross1 className="text-black text-xl" ></RxCross1>

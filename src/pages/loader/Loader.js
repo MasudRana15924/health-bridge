@@ -17,7 +17,7 @@ const Loader = () => {
                 {/* <img src={logo} alt="" /> */}
 
             </div>
-            <p className="ml-5 lg:ml-24 text-sm font-semibold leading-6 text-gray-900">DIU HelathBridge</p>
+            <p className="ml-10 lg:ml-24 text-sm font-semibold leading-6 text-gray-900">DIU HelathBridge</p>
         </div>
     );
 };

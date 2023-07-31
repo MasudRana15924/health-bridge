@@ -38,12 +38,12 @@ const Header = () => {
         window.location.replace('/consultation')
     }
     return (
-        <header className="absolute inset-x-0 top-0 z-50 lg:pl-2 lg:pr-2 lg:w-full mx-auto">
+        <header className="absolute inset-x-0 top-0 z-50 lg:pl-2 lg:pr-2 lg:w-full mx-auto  lg:mr-5">
             <nav className="flex items-center justify-between pr-3 lg:py-4 lg:pr-0" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/">
                         <img
-                            className=" ml-5 h-10 lg:ml-0 lg:h-16 w-auto "
+                            className=" ml-5 h-10 lg:ml-6 2xl:ml-10 lg:h-16 w-auto "
                             src={logo}
                             alt=""
 
@@ -61,7 +61,7 @@ const Header = () => {
                         />
                     </button>
                 </div>
-                <div class="hidden lg:flex lg:gap-x-6 2xl:gap-x-12">
+                <div class="hidden lg:ml-16 lg:flex lg:gap-x-6 2xl:gap-x-12">
                     {/* <Link  className="text-xl font-semibold leading-6 text-gray-900">
                         Consultations
                     </Link> */}

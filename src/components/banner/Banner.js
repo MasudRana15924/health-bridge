@@ -26,16 +26,16 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="text-center">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                        <h1 className="text-4xl font-bold tracking-tight text-teal-400 sm:text-6xl">
                             DIU Health Bridge
                         </h1>
-                        <p className="mt-3 text-lg leading-8 text-gray-600 text-start">
+                        <p className="mt-6 text-lg leading-8 text-gray-600 text-start">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur unde laboriosam, magnam recusandae nobis totam eveniet eos ab quo quisquam placeat iusto illo voluptate debitis tempora consectetur odit nemo quidem.
                         </p>
                         <div className="mt-5 flex items-center justify-center gap-x-6">
                             <Link
                                 to="/doctors"
-                                className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="rounded-md bg-teal-400  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400 "
                             >
                                 Get Appointment
                             </Link>

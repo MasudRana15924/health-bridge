@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { GoPrimitiveDot } from "react-icons/go";
+import { RxDotFilled } from "react-icons/rx";
 import imgAvatar from '../../images/avatar.jpg'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -29,8 +29,8 @@ const DoctorsList = ({ doctor }) => {
                             <p className="font-semibold"> {name || <Skeleton /> } </p>
 
                             {
-                                isActive === true ? <GoPrimitiveDot className="text-green-600 mt-1"></GoPrimitiveDot> : null
-                            }
+                            isActive === true ? <button className="  bg-green-500 h-6 w-12 border rounded-lg text-white ml-3 mt-1 border-green-500">online</button> : null
+                        }
                         </div>
                         <p className="text-slate-600  text-md " >
                             {degree || <Skeleton /> } 
