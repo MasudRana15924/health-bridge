@@ -10,10 +10,11 @@ import TextField from '@mui/material/TextField';
 import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { InputAdornment } from '@mui/material';
+import { Rings } from 'react-loader-spinner';
 const DoctorLogin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { error,loggeduser } = useSelector(
+    const { error,loggeduser,isLoading  } = useSelector(
         (state) => state.userDetails
     );
    
@@ -81,9 +82,24 @@ const DoctorLogin = () => {
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
                             <div>
-                                <button className=" btn btn-md w-full bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                {/* <button className=" btn btn-md w-full bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
                                     <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
+                                </button> */}
+                                  {
+                                    isLoading ? <button className=" btn btn-md w-full  bg-white border-white hover:bg-white hover:border-white mb-5">
+                                        <Rings
+                                            height={40}
+                                            width={60}
+                                            color="red"
+                                            visible={true}
+                                            secondaryColor="red"
+                                            className="border"
+
+                                        />
+                                    </button> : <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
+                                        <span className="font-semibold text-white text-lg">Login</span>
+                                    </button>
+                                }
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">Don't have any account ?</span> <Link to="/doctor/signup"> <span className="text-sm font-semibold leading-6 text-gray-900">Create new account</span>
                                 </Link>
                             </div>

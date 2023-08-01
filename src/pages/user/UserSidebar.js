@@ -119,7 +119,7 @@ const UserSidebar = () => {
                     </div>
                     <div className="flex mt-5">
                         <CgProfile className="mt-1 h-5 mr-3"></CgProfile>
-                        <Link to="/user-info">
+                        <Link to="/doctor-info">
                             <h2 className="text-md font-semibold leading-6 text-gray-900">My Profile</h2>
                         </Link>
                     </div>

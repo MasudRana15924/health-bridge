@@ -82,18 +82,17 @@ const Login = () => {
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
 
-                            <div className="flex justify-between">
-                            <div className="mt-5 text-start">
-                                <span className="text-sm tracking-wide text-gray-400 text-start">Are you a Doctor ?</span> <Link to="/doctor/login"> <span className="text-sm font-semibold leading-6 text-gray-600">Login as a doctor</span>
-                                </Link>
-                            </div>
-                            <div className="mt-5">
-                                <Link to="/user/password">
+                            <div className="lg:flex justify-between">
+                                <div className="mt-5 text-start">
+                                    <span className="text-sm tracking-wide text-gray-400 text-start">Are you a Doctor ?</span> <Link to="/doctor/login"> <span className="text-sm font-semibold leading-6 text-gray-600">Login as a doctor</span>
+                                    </Link>
+                                </div>
+                                <div className="mt-5">
+                                    <Link to="/user/password">
+                                        <span className="text-start  text-sm  text-blue-700 mt-10">Forgot password ?</span>
 
-                                    <span className="text-sm tracking-wide text-blue-700 mt-10">Forgot password ?</span>
-                                 
-                                </Link>
-                            </div>
+                                    </Link>
+                                </div>
                             </div>
                             <div>
                                 {
