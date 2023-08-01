@@ -98,7 +98,7 @@ const Header = () => {
                         <Link to="/" className=" text-sm  text-gray-900 px-5 py-3   block " onClick={showMenu}>Home</Link>
                     </li>
                     <li>
-                        <Link onClick={handleReload} className="text-sm  text-gray-900 px-5 py-3   block ">
+                        <Link to="/consultation" className="text-sm  text-gray-900 px-5 py-3   block ">
                             Consultations
                         </Link>
                     </li>
