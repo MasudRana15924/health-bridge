@@ -15,7 +15,6 @@ const Medicine = () => {
     const { medicines } = useSelector(state => state.medicines.medicines);
     const {isLoading } = useSelector(state => state.medicines);
     const { search } = useSelector(state => state.filter);
-  console.log(medicines);
     const [input, setInput] = useState(search);
     const handleSearch = (e) => {
         e.preventDefault();

@@ -75,7 +75,7 @@ const UserDetails = () => {
                                 </div>
                                 <div className="w-3/4 mx-auto mt-5">
                                 {
-                                        user?.phone?  <p className="text-start text-md text-gray-600 font-medium"> Cell No : {user.phone }</p>:null
+                                        user?.phone?  <p className="text-start text-md text-gray-600 font-medium"> Cell No : 0{user.phone }</p>:null
                                     }
                                 </div>
                               <Link to="/user/update/profile">
@@ -83,7 +83,6 @@ const UserDetails = () => {
                               <button className="btn btn-sm w-3/4 mx-auto mt-10 bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500" >Update Profile</button>
                               </Link>
                             </div>
-                    
                     
                 </div>}
             </div>

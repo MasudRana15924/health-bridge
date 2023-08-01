@@ -34,9 +34,7 @@ const Header = () => {
     const showMenu = () => {
         setActive(!active)
     }
-    const handleReload = (e) => {
-        window.location.replace('/consultation')
-    }
+
     return (
         <header className="absolute inset-x-0 top-0 z-50 lg:pl-2 lg:pr-2 lg:w-full mx-auto  lg:mr-5">
             <nav className="flex items-center justify-between pr-3 lg:py-4 lg:pr-0" aria-label="Global">
@@ -62,9 +60,7 @@ const Header = () => {
                     </button>
                 </div>
                 <div class="hidden lg:ml-16 lg:flex lg:gap-x-6 2xl:gap-x-12">
-                    {/* <Link  className="text-xl font-semibold leading-6 text-gray-900">
-                        Consultations
-                    </Link> */}
+                   
                     {navigation.map((item) => (
                         <Link key={item.name} as={HashLink} to={item.to} className="text-xl font-semibold leading-6 text-gray-900">
                             {item.name}
@@ -74,13 +70,28 @@ const Header = () => {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     {
                         token ?
-                            <Link to="/user-info">
+                            <div>
+                                {
+                                    user?.role==='doctor'? <Link to="/doctor-info">
+                                    {
+                                        user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
+                                    }
+    
+                                    {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
+                                </Link>:<Link to="/user-info">
                                 {
                                     user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
                                 }
 
                                 {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                             </Link>
+                                }
+                            </div>
+                            // <Link to="/user-info">
+                            //     {
+                            //         user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
+                            //     }
+                            // </Link>
                             : <Link to="/user-signin" className="text-xl font-semibold leading-6 text-gray-900">
                                 Log in
                             </Link>

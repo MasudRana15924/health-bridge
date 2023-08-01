@@ -62,6 +62,8 @@ import MyOrder from './pages/user/order/MyOrder';
 import AllOrderList from './pages/admin/order/AllOrderList';
 import Prescription from './pages/user/prescription/Prescription';
 import Filter from './components/landingpage/Filter';
+import DoctorDetails from './components/doctor/DoctorDetails';
+import DoctorInfo from './pages/doctor/DoctorInfo';
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -93,6 +95,7 @@ function App() {
             <Route path="/user/confirm/email" element={< ConfirmEmail />}></Route>
             <Route path="/doctor/signup" element={< DoctorSignup />}></Route>
             <Route path="/doctor/login" element={< DoctorLogin />}></Route>
+            <Route path="/doctor-info" element={< DoctorInfo />}></Route>
             <Route path="/doctor-forgot-password" element={< DoctorForgotPassword />}></Route>
             <Route exact path="/forgot/password/reset/:token" element={<DoctorResetPassword></DoctorResetPassword>} />
             <Route path="/doctor/change/password" element={<PrivateRoute><ChangePassword /></PrivateRoute>}></Route>

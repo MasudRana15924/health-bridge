@@ -1,11 +1,17 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { AiOutlineCheckCircle } from "react-icons/ai"
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearMeet } from '../../state/appointments/doctorMeetSlice';
 const Payment = () => {
-    const { tranId } = useParams();
+    const dispatch=useDispatch();
+    const { meeturl } = useSelector(state => state.meet.meetUrl);
+    const handleMeetUrl=()=>{
+            //   navigate(meeturl);
+            dispatch(clearMeet());
+              window.open(meeturl)
+    }
     const duration = 5 * 60 * 1000;
     const [time, setTime] = useState(duration);
     useEffect(() => {
@@ -43,8 +49,9 @@ const Payment = () => {
                 Check your email for video call link
             </a> */}
             <br />
-            <Link to="/my-booking">
-                <button className=" mt-5 btn w-40  bg-emerald-400 border-emerald-400 hover:bg-emerald-400 hover:border-emerald-400">Done</button></Link>
+            {/* <Link to={meeturl}>
+                <button className=" mt-5 btn w-40  bg-emerald-400 border-emerald-400 hover:bg-emerald-400 hover:border-emerald-400">Done</button></Link> */}
+                 <button className=" mt-5 btn w-40  bg-emerald-400 border-emerald-400 hover:bg-emerald-400 hover:border-emerald-400" onClick={handleMeetUrl}>Done</button>
         </div>
     );
 };

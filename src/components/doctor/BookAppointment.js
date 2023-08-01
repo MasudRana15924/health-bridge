@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { createAppointments } from '../../state/appointments/appointmentsSlice';
 import { useEffect } from 'react';
 import { TextField } from '@mui/material';
+import { addMeetToStore } from '../../state/appointments/doctorMeetSlice';
 const BookAppointment = () => {
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
@@ -39,7 +40,7 @@ const BookAppointment = () => {
             dispatch(createAppointments({
                 data, userToken
             }));
-
+            dispatch(addMeetToStore({meeturl}));
         } else {
             toast.error('Please enter your details', {
                 position: "top-right",
@@ -54,11 +55,8 @@ const BookAppointment = () => {
         }
     }
     useEffect(() => {
-    
         if (appointments[0]) {
              window.location.replace(appointments[0].url);
-             console.log('url',appointments[0].url);
-            //  navigate(appointments[0].url)
         }
     }, [appointments])
     return (
@@ -94,7 +92,7 @@ const BookAppointment = () => {
                                 <TextField id="outlined-basic" variant="outlined" label="Write your Problem" className="w-full" value={problem} onChange={(e) => setProblem(e.target.value)} />
                             </div>
 
-                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-3/4 w-full text-white font-semibold text-center mb-5 ">Submit </button>
+                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-full w-full text-white font-semibold text-center mb-5 ">Submit </button>
                         </form>
                     </div>
                     : <div>

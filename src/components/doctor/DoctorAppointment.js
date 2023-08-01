@@ -24,7 +24,7 @@ const DoctorAppointment = ({ booking }) => {
         width: 1000,
         height: 700,
         bgcolor: 'background.paper',
-        border: '2px solid #000',
+        // border: '2px solid #000',
         boxShadow: 24,
         p: 4,
     };
@@ -64,7 +64,6 @@ const DoctorAppointment = ({ booking }) => {
     const { medname, dailyUse, days, quantity } = medicines;
     const medInfo = { medname, dailyUse, days, quantity }
     const handleCreate = (e) => {
-        console.log(medicines);
         const data = { medicines, medInfo, userId, doctorId, appointmentId, doctorAdvice, followUp, doctortitle, doctorname, doctordegree, doctorwork,name, age, gender, problem,weight,height, }
         e.preventDefault();
         dispatch(fetchCreatePrescription({
@@ -104,7 +103,7 @@ const DoctorAppointment = ({ booking }) => {
                 <div className="flex">
                     <div className="">
                         <img
-                            // src={patientimage}
+                            //  src={patientimage}
                             className="doctor-image m-3 ml-3 border rounded"
                             alt={name}
                         />
@@ -146,23 +145,31 @@ const DoctorAppointment = ({ booking }) => {
                         {medicines.map((medicine, index) => (
                             <div className="mt-8 flex gap-4">
 
-                                <TextField name="medname" id="outlined-basic" label="Medicine Name" variant="outlined" value={medicine.medname} onChange={(e) => handleMedicine(index, 'medname', e.target.value)} />
+                                {/* <TextField name="medname" id="outlined-basic" label="Medicine Name" variant="outlined" value={medicine.medname} onChange={(e) => handleMedicine(index, 'medname', e.target.value)} />
+                               
                                 <TextField name="dailyUse" id="outlined-basic" label="Daily how many times" variant="outlined" value={medicine.dailyUse} onChange={(e) => handleMedicine(index, 'dailyUse', e.target.value)} />
                                 <TextField name="days" id="outlined-basic" label="For how many days" variant="outlined" value={medicine.days} onChange={(e) => handleMedicine(index, 'days', e.target.value)} />
-                                <TextField name="quantity" id="outlined-basic" label="Total Quantity" variant="outlined" value={medicine.quantity} onChange={(e) => handleMedicine(index, 'quantity', e.target.value)} />
+                                <TextField name="quantity" id="outlined-basic" label="Total Quantity" variant="outlined" value={medicine.quantity} onChange={(e) => handleMedicine(index, 'quantity', e.target.value)} /> */}
+                                <input type="text" placeholder="Medicine Name" className="medicine-input" value={medicine.medname} onChange={(e) => handleMedicine(index, 'medname', e.target.value)}/>
+                                <input type="text" placeholder="Daily Doos" className="medicine-input" value={medicine.dailyUse} onChange={(e) => handleMedicine(index, 'dailyUse', e.target.value)}/>
+                                <input type="text" placeholder="Total Days" className="medicine-input" value={medicine.days} onChange={(e) => handleMedicine(index, 'days', e.target.value)}/>
+                                <input type="text" placeholder="Total quantity " className="medicine-input" value={medicine.quantity} onChange={(e) => handleMedicine(index, 'quantity', e.target.value)}/>
+                                <button onClick={handleAddPrescription} className="text-blue-500 h-10 w-12"> <AiOutlinePlus></AiOutlinePlus></button>
                             </div>
                         ))}
 
-                        <button onClick={handleAddPrescription} className="text-blue-500"> Add More Medicines</button>
+                       
 
                         <div className="mt-24  gap-5">
                             <div className="mt-5">
-                                <TextField id="outlined-basic" label="Doctors Advice" variant="outlined" value={doctorAdvice} onChange={(e) => setdoctorAdvice(e.target.value)} />
+                                {/* <TextField id="outlined-basic" label="Doctors Advice" variant="outlined" value={doctorAdvice} onChange={(e) => setdoctorAdvice(e.target.value)} /> */}
+                                <input type="text" placeholder="Doctor Advice" className="medicine-input" value={doctorAdvice} onChange={(e) => setdoctorAdvice(e.target.value)}/>
                             </div>
                             <div className="mt-5">
                                 <p>Follow up date</p>
-                                <TextField id="outlined-basic" label="day-month-year" variant="outlined"
-                                    value={followUp} onChange={(e) => setfollowUp(e.target.value)} />
+                                {/* <TextField id="outlined-basic" label="day-month-year" variant="outlined"
+                                    value={followUp} onChange={(e) => setfollowUp(e.target.value)} /> */}
+                                    <input className="date-input border border-gray-200 h-8 mt-3 pl-2 pr-2 " type="date" name="" id="" value={followUp} onChange={(e) => setfollowUp(e.target.value)}/>
                             </div>
                         </div>
                         <div className="w-1/4 mx-auto mt-12">
