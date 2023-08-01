@@ -41,9 +41,7 @@ const DoctorInfo = () => {
                     visible={true}
                     secondaryColor="green"
                     className="border ml-36"
-
                 />
-                {/* <p className="ml-1 mt-2 text-gray-900">please wait a sec</p> */}
             </div>:
             
             <div className="w-full  lg:w-full lg:m-0 mt-12">
