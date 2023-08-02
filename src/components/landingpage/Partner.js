@@ -1,5 +1,7 @@
 import React from 'react';
-
+import { BiHomeAlt2 ,BiGlobe} from 'react-icons/bi';
+import { AiOutlineStar } from 'react-icons/ai';
+import { CiLocationOn } from 'react-icons/ci';
 
 const Partner = () => {
     return (
@@ -43,12 +45,11 @@ const Partner = () => {
                 </div>
             </div>
             <div className="wrapper">
-                {/* <div className="center-line">
-                    <a href="#" class="scroll-icon"><i className="fas fa-caret-up"></i></a>
-                </div> */}
+                
                 <div className="row row-1">
-                    <section>
-                        <i className="icon fas fa-home"></i>
+                    <section className="border">
+                       
+                        <BiHomeAlt2 className="icon"></BiHomeAlt2>
                         <div className="details">
                             <span className="title">Title of Section 1</span>
                             <span>1st Jan 2021</span>
@@ -61,8 +62,8 @@ const Partner = () => {
                     </section>
                 </div>
                 <div className="row row-2">
-                    <section>
-                        <i className="icon fas fa-star"></i>
+                    <section className="border">
+                    <AiOutlineStar className="icon"></AiOutlineStar>
                         <div className="details">
                             <span className="title">Title of Section 2</span>
                             <span>2nd Jan 2021</span>
@@ -75,8 +76,8 @@ const Partner = () => {
                     </section>
                 </div>
                 <div className="row row-1">
-                    <section>
-                        <i className="icon fas fa-rocket"></i>
+                    <section className="border">
+                         <CiLocationOn className="icon"></CiLocationOn>
                         <div className="details">
                             <span className="title">Title of Section 3</span>
                             <span>3rd Jan 2021</span>
@@ -89,8 +90,8 @@ const Partner = () => {
                     </section>
                 </div>
                 <div className="row row-2">
-                    <section>
-                        <i className="icon fas fa-globe"></i>
+                    <section className="border">
+                    <BiGlobe className="icon"></BiGlobe>
                         <div className="details">
                             <span className="title">Title of Section 4</span>
                             <span>4th Jan 2021</span>
