@@ -79,7 +79,7 @@ const Nurses = () => {
 
                 <div className="col-span-12 ">
                     {visible && (nurses?.length > 0 && (
-                        <button onClick={loadMore} className="btn btn-sm bg-blue-400 border-blue-400 mx-auto  mb-5">Load More</button>
+                        <button onClick={loadMore} className="btn btn-sm bg-teal-400 border-teal-400 mx-auto  mb-5">Load More</button>
                     ))
                     }
                 </div>

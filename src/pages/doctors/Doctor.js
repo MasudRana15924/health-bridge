@@ -50,7 +50,7 @@ const Doctor = () => {
                     {content}
                     <div className="col-span-12 ">
                         {visible && (doctors?.length > 0 && (
-                            <button onClick={loadMore} className="btn btn-sm bg-blue-400 border-blue-400 mx-auto mt-5 mb-10">Load More</button>
+                            <button onClick={loadMore} className="btn btn-sm bg-teal-400 border-teal-400 mx-auto mt-5 mb-10">Load More</button>
                         ))
                         }
                     </div>

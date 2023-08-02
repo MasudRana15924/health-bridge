@@ -81,10 +81,10 @@ const DoctorLogin = () => {
                                 className="w-full py-3 px-6"
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
+                            <Link to="/doctor/forgot-password">
+                            <p className="text-start text-blue-500 ">Forgot password ?</p></Link>
                             <div>
-                                {/* <button className=" btn btn-md w-full bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
-                                    <span className="font-semibold text-white text-lg">Login</span>
-                                </button> */}
+                                
                                   {
                                     isLoading ? <button className=" btn btn-md w-full  bg-white border-white hover:bg-white hover:border-white mb-5">
                                         <Rings

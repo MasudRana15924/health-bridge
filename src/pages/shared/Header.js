@@ -38,7 +38,7 @@ const Header = () => {
     return (
         <header className="absolute inset-x-0 top-0 z-50 lg:pl-2 lg:pr-2 lg:w-full mx-auto  lg:mr-5">
             <nav className="flex items-center justify-between pr-3 lg:py-4 lg:pr-0" aria-label="Global">
-                <div className="flex lg:flex-1">
+                <div className="flex lg:flex-1 ">
                     <Link to="/">
                         <img
                             className=" ml-5 h-10 lg:ml-6 2xl:ml-10 lg:h-16 w-auto "
@@ -46,6 +46,7 @@ const Header = () => {
                             alt=""
 
                         />
+                    
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
@@ -77,21 +78,13 @@ const Header = () => {
                                             user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
                                         }
 
-                                        {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                                     </Link> : <Link to="/user-info">
                                         {
                                             user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
                                         }
-
-                                        {/* <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p> */}
                                     </Link>
                                 }
                             </div>
-                            // <Link to="/user-info">
-                            //     {
-                            //         user.avatar.url ? <img src={user.avatar.url} alt="" className="h-8 w-8 border rounded-full" /> : <p className="text-sm font-semibold leading-6 text-gray-900">{user.name}</p>
-                            //     }
-                            // </Link>
                             : <Link to="/user-signin" className="text-xl font-semibold leading-6 text-gray-900">
                                 Log in
                             </Link>
@@ -100,7 +93,7 @@ const Header = () => {
             </nav>
             {/* for small devices */}
             <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-16 ' : 'hidden'}>
-                <div className="flex justify-between bg-blue-500">
+                <div className="flex justify-between bg-teal-400">
                     <RxCross1 className="text-xl ml-5  mt-6 text-white" onClick={showMenu}></RxCross1>
                     {
                         user?.role === 'doctor' ? <Link to="/doctor-info">

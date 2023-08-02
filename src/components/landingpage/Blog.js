@@ -15,7 +15,7 @@ const Blog = () => {
                             <h2 className="text-start lg:text-xl 2xl:text-2xl font-semibold ">
                              Benefits of Consulting Online Doctor 
                             </h2>
-                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.   <button className="btn btn-sm bg-blue-400 border-blue-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.   <button className="btn btn-sm bg-teal-400 border-teal-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
                       
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const Blog = () => {
                             <h2 className="text-start lg:text-xl 2xl:text-2xl font-semibold ">
                             Benefits of Online Doctor 
                             </h2>
-                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.  <button className="btn btn-sm bg-blue-400 border-blue-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.  <button className="btn btn-sm bg-teal-400 border-teal-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
                         
                         </div>
                     </div>
@@ -39,7 +39,7 @@ const Blog = () => {
                             <h2 className="text-start lg:text-xl 2xl:text-2xl font-semibold">
                             Benefits of Insurance
                             </h2>
-                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.  <button className="btn btn-sm bg-blue-400 border-blue-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
+                            <p className=" text-start text-sm font-semibold leading-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.  <button className="btn btn-sm bg-teal-400 border-teal-400 lg:w-2/4 2xl:w-1/4 text-xs ">Read More</button></p>
             
                         </div>
                     </div>

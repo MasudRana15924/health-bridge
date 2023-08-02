@@ -79,7 +79,7 @@ const Resetpassword = () => {
                                 required
                             />
                         </div>
-                        <button className=" text-white py-1 w-full  font-semibold h-10 bg-blue-500" type="submit">Update</button>
+                        <button className=" text-white py-1 w-full  font-semibold h-10 bg-emerald-500" type="submit">Update</button>
 
                     </form>
                 </div>
