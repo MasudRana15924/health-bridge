@@ -6,15 +6,20 @@ import Acheivement from '../landingpage/Acheivement';
 import Blog from '../landingpage/Blog';
 import Nurses from '../../pages/nurses/Nurses';
 import Insurances from '../landingpage/Insurances';
+import Partner from '../landingpage/Partner';
+import Collab from '../landingpage/Collab';
 const Home = () => {
     return (
         <div id="home">
             <Banner></Banner>
-            <Services></Services>
+            {/* <Services></Services> */}
+            
             <Doctor></Doctor>
-            <Acheivement></Acheivement>
-            <Blog></Blog>
+            <Collab></Collab>
+            {/* <Acheivement></Acheivement> */}
+            {/* <Blog></Blog> */}
             <Nurses></Nurses>
+            <Partner></Partner>
             <Insurances></Insurances>
         </div>
     );
