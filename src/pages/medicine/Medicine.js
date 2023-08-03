@@ -10,6 +10,7 @@ import { Button } from '@mui/material';
 import { useState } from 'react';
 import { searched } from '../../state/filter/filterReducer';
 import { Rings } from 'react-loader-spinner';
+import { addsearchToStore } from '../../state/medicine/searchSlice';
 const Medicine = () => {
     const dispatch = useDispatch();
     const { medicines } = useSelector(state => state.medicines.medicines);
@@ -19,10 +20,11 @@ const Medicine = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         dispatch(searched(input));
+        dispatch(addsearchToStore(input));
     }
     useEffect(() => {
         dispatch(fetchFilterMedicne({ search }));
-    }, [dispatch, search])
+    }, [dispatch, search,])
     const { cartTotalQuantity } = useSelector((state) => state.cart);
     let content;
     if(isLoading && medicines?.length < 0){
@@ -45,9 +47,10 @@ const Medicine = () => {
     const Reset = () => {
         window.location.reload();
     }
+    const { searchList } = useSelector(state => state.searchList);
     return (
         <section className="pt-12 mb-10 lg:mt-16">
-            <div className="flex justify-between pl-5 pr-5 mt-3 w-full lg:w-3/4 2xl:w-2/4 mx-auto ">
+            <div className="flex justify-between pl-2 lg:pl-0  pr-5 mt-3 w-full lg:w-3/4 2xl:w-2/4 mx-auto ">
                
                 <form className='w-3/4 lg:w-2/4 2xl:w-2/4 flex'>
                     <input
@@ -58,8 +61,8 @@ const Medicine = () => {
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="Search"
                     />
-                    <button onClick={handleSearch} className="btn btn-sm  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 h-10 w-20 absolute ml-52 lg:ml-96"><BsSearch></BsSearch></button>
-
+                    {/* <button onClick={handleSearch} className="btn btn-sm  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 h-10 w-20 absolute ml-52 lg:ml-96"><BsSearch></BsSearch></button> */}
+                    <button onClick={handleSearch} className=" bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 h-10 w-20 "><BsSearch className="text-white ml-5"></BsSearch></button>
                 </form>
                 <div className="mr-40 mt-1 hidden lg:block">
                     <Button variant="outlined" size="small" className="h-8 mr-20" onClick={Reset}>
@@ -79,6 +82,11 @@ const Medicine = () => {
                         </div>
                     </Link>
                 </div>
+            </div>
+            <div className="lg:w-3/4 mx-auto">
+                <p className="text-start">Search History</p> 
+                <p className="text-start text-gray-400  min-w-fit">{searchList}</p> 
+              
             </div>
             <div className="w-1/4 lg:hidden">
                 <Button variant="outlined" size="small" className="h-6" onClick={Reset}>

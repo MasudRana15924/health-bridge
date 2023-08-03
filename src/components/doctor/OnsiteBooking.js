@@ -1,15 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { createAppointments } from '../../state/appointments/appointmentsSlice';
-import { useEffect } from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { Skeleton } from '@mui/material';
 import { FaRegMoneyBillAlt } from 'react-icons/fa';
 const OnsiteBooking = () => {
-    const navigate = useNavigate()
     const dispatch = useDispatch();
     const { token, loggeduser } = useSelector(
         (state) => state.userDetails
@@ -17,7 +15,6 @@ const OnsiteBooking = () => {
     const { doctor } = useSelector(state => state.doctor.doctor);
     const userToken = loggeduser.token
     const [patientname, setPname] = useState('');
-    const [patientemail, setEmail] = useState('');
     const [patientgender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
@@ -31,13 +28,23 @@ const OnsiteBooking = () => {
     const doctordegree = doctor.degree;
     const doctorwork = doctor.work;
     const url = doctor.url
-    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, patientgender, phone, date, schedule, url });
+    const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientgender, phone, date, schedule, url });
     const handleCreate = (e) => {
         e.preventDefault();
         if (patientname && phone && date && schedule) {
             dispatch(createAppointments({
                 data, userToken
             }));
+            toast.error('Booked Success', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         } else {
             toast.error('Please enter your details', {
                 position: "top-right",
@@ -53,7 +60,7 @@ const OnsiteBooking = () => {
 
     }
     return (
-        <div className="lg:w-3/4 mx-auto mt-24 lg:mt-48 ">
+        <div className="lg:w-3/4 mx-auto mt-16 lg:mt-48 ">
             <div className="lg:hidden w-full flex">
                 {
                     doctor?.avatar?.url ? <img
@@ -149,42 +156,40 @@ const OnsiteBooking = () => {
             {
                 token ?
 
-                    <div className=" lg:w-3/4 mx-auto  mb-12">
-
+                    <div className=" lg:w-3/4 mx-auto  mb-12 mt-5">
+                        <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 ml-3 lg:ml-24 lg:text-xl">In-hospital Consultation</p>
                         <form action="" className="p-3" onSubmit={handleCreate}>
 
                             <div className="">
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300">What is your Name?</p>
+                                {/* <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300">What is your Name?</p> */}
                                 <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded lg:w-3/4 mx-auto w-full p-2 h-12" />
                             </div>
-                           
+
                             <div>
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 ">What is your Phone?</p>
-                                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto " />
+                                {/* <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 ">What is your Phone?</p> */}
+                                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto mt-5" />
                             </div>
                             <div>
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Gender?</p>
-                                <select name="Gender" className="w-full lg:w-3/4 h-12 border rounded " value={patientgender} onChange={(e) => setGender(e.target.value)}>
+                                {/* <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Gender?</p> */}
+                                <select name="Gender" className="w-full lg:w-3/4 h-12 border rounded mt-5" value={patientgender} onChange={(e) => setGender(e.target.value)}>
                                     <option  >Select Gender </option>
                                     <option  >Male </option>
                                     <option >Female </option>
                                 </select>
                             </div>
+
                             <div>
-
-
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">Select appointment Date?</p>
-                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Appoinment Date" className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto  text-black" />
-
-                            </div>
-                            <div>
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">Select appointment Slots?</p>
-                                <select className="w-full lg:w-3/4 h-12 border rounded" value={schedule} onChange={(e) => setSchedule(e.target.value)}  >
+                                {/* <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">Select appointment Slots?</p> */}
+                                <select className="w-full lg:w-3/4 h-12 border rounded mt-5" value={schedule} onChange={(e) => setSchedule(e.target.value)}  >
                                     <option  >Select Slots</option>
                                     <option >Morning </option>
                                     <option >Afternoon </option>
                                     <option >Evening </option>
                                 </select>
+                            </div>
+                            <div>
+                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">Select  Date?</p>
+                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Appoinment Date" className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto  text-black" />
                             </div>
 
                             <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-3/4 w-full text-white font-semibold text-center mb-5 ">Book Appointment </button>

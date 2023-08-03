@@ -57,6 +57,7 @@ import  myPrescriptionsSlice  from "./user/prescription/prescriptionSlice";
 import userDetailsSlice from "./user/details/userDetailsSlice";
 import storeReducer from './appointments/doctorMeetSlice'
 import doctorDetailsSlice from "./doctors/doctorDetailsSlice";
+import searchReducer from './medicine/searchSlice'
 const persistConfig = {
   key: "authentication",
   storage
@@ -122,7 +123,8 @@ const rootReducer = combineReducers({
   allOrders:adminAllOrdersSlice,
   myPrescriptions:myPrescriptionsSlice,
   meet:storeReducer,
-  doctorDetails:doctorDetailsSlice
+  doctorDetails:doctorDetailsSlice,
+  searchList:searchReducer
 });
 
 const store = configureStore({

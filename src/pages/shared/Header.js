@@ -56,7 +56,7 @@ const Header = () => {
                         onClick={showMenu}
                     >
                         <span className="sr-only">Open main menu</span>
-                        <FiMenu className="lg:hidden block h-8 w-8 cursor-pointer mr-3 "
+                        <FiMenu className="lg:hidden block h-6 w-8 cursor-pointer mr-3 "
                         />
                     </button>
                 </div>
@@ -93,7 +93,7 @@ const Header = () => {
             </nav>
             {/* for small devices */}
             <ul className={active ? '  border border-gray-200 flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block bg-white text-black text-start ml-16 ' : 'hidden'}>
-                <div className="flex justify-between bg-teal-400">
+                <div className="flex justify-between bg-teal-400 h-20">
                     <RxCross1 className="text-xl ml-5  mt-6 text-white" onClick={showMenu}></RxCross1>
                     {
                         user?.role === 'doctor' ? <Link to="/doctor-info">
