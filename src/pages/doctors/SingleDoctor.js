@@ -33,9 +33,9 @@ const SingleDoctor = () => {
         </div>
     }
     return (
-        <section className="p-3 lg:p-0 lg:w-3/4 mx-auto pt-6 pb-20 mt-24">
+        <section className="p-3 lg:p-0 lg:w-3/4 mx-auto pt-6 pb-20 mt-12 lg:mt-48">
             {content}
-            <div className="mt-48">
+            <div className="mt-48 ">
                 {/* <h2 className="text-start text-3xl text-red-500">Related Doctors </h2> */}
                 {/* <RelatedDoctors expert={expert} id={_id}> </RelatedDoctors> */}
             </div>

@@ -64,9 +64,11 @@ const BookAppointment = () => {
             {
                 token ?
 
-                    <div className=" lg:w-1/4 mx-auto mt-24 lg:mt-48 mb-12">
-
-                        <form action="" className="lg:mt-10 p-3" onSubmit={handleCreate}>
+                    <div className=" lg:w-2/4 mx-auto mt-16 lg:mt-48 mb-12">
+                        
+                        <form action="" className="lg:mt-10 p-3 lg:w-3/4 mx-auto" onSubmit={handleCreate}>
+                        <p className="text-start text-teal-400 text-2xl">Consultation Details</p>
+                        <p className="text-start text-gray-400 text-sm mt-5 mb-5">please enter your details to take video consultations</p>
                             <div className="mb-5">
                                 <TextField id="outlined-basic" variant="outlined" label="Full Name" className="w-full" value={name} onChange={(e) => setName(e.target.value)} />
                             </div>
@@ -92,7 +94,7 @@ const BookAppointment = () => {
                                 <TextField id="outlined-basic" variant="outlined" label="Write your Problem" className="w-full" value={problem} onChange={(e) => setProblem(e.target.value)} />
                             </div>
 
-                            <button className="btn btn-md bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-5 h-12 lg:w-full w-full text-white font-semibold text-center mb-5 ">Submit </button>
+                            <button className="btn btn-md bg-teal-500 hover:bg-teal-500 border-teal-500 hover:border-teal-500 mt-5 h-12 lg:w-full w-full text-white font-semibold text-center mb-5 ">Submit </button>
                         </form>
                     </div>
                     : <div>

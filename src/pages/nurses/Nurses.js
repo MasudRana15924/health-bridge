@@ -45,23 +45,24 @@ const Nurses = () => {
     }
     return (
         <section id="#nurses" className="doctors-section mb-10 md:mt-24 lg:mt-4">
-            <div className="mt-12 lg:pt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
-                <h1 className="text-start ml-5 lg:ml-0 font-semibold text-2xl md:text-2xl lg:text-3xl">Our Best Nurses</h1>
-                <div className="hidden">
-                    {locations?.map((exp) => (
-
-                        <button
-                        className="btn btn-xs mt-5 lg:mt-0 md:mt-0 ml-1 md:ml-5 lg:ml-5 bg-white text-sm font-semibold leading-6 text-black hover:bg-slate-50"
-                            key={exp}
-                            onClick={() => setLocation(exp)}
-                        >
-                            {exp}
-                        </button>
-                    ))}
-                </div>
+            <div className="mt-24 lg:pt-12 md:flex lg:flex justify-between md:w-3/4 lg:w-3/4 mx-auto ">
+                <h1 className="text-start ml-5 lg:ml-0 font-semibold text-2xl md:text-2xl lg:text-3xl text-teal-500">Our Best Nurses</h1>
+                
+            </div>
+            <div className=" w-3/4 mx-auto hidden mt-5">
+                {/* <p>Filter by</p> */}
+                {locations?.map((exp) => (
+                    <button
+                        className="btn btn-xs mt-5 lg:mt-0 md:mt-0 ml-1 bg-gray-400 border-gray-400 hover:bg-gray-400 hover:border-gray-400 text-sm font-semibold leading-6 text-black "
+                        key={exp}
+                        onClick={() => setLocation(exp)}
+                    >
+                        {exp}
+                    </button>
+                ))}
             </div>
             {
-                 isLoading ? <div className="w-2/4 lg:w-1/4 mx-auto flex mt-10">
+                 isLoading ? <div className="w-2/4 lg:w-1/4 mx-auto flex mt-5">
 
                  <Rings
                      height={40}
