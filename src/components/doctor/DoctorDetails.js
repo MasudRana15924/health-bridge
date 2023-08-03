@@ -7,11 +7,12 @@ import { createreviews } from '../../state/doctor/reviewSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import imgAvatar from '../../images/avatar.jpg'
-import { GoPrimitiveDot } from "react-icons/go";
+import { BiVideoOff } from "react-icons/bi";
+import { GiHospitalCross } from "react-icons/gi";
 
 
 const DoctorDetails = ({ doctor }) => {
-    const { avatar, name, work, expert,  degree, fees, ratings, description, reviews, isActive, experience } = doctor;
+    const {title, avatar, name, work, expert,  degree, fees, ratings, description, reviews, isActive, experience } = doctor;
     const dispatch = useDispatch();
     const { loggeduser } = useSelector(
         (state) => state.userDetails
@@ -62,7 +63,7 @@ const DoctorDetails = ({ doctor }) => {
                 </div>
                 <div className="p-5 lg:p-0 text-start text-sm font-semibold leading-6 text-gray-900">
                     <div className="flex mt-3">
-                        <p className="font-semibold text-lg"> {name} </p>
+                        <p className="font-semibold text-lg">{title} {name} </p>
                         {/* {
                             isActive === true ? <GoPrimitiveDot className="text-green-600 text-xl mt-1"></GoPrimitiveDot> : null
                         } */}
@@ -107,14 +108,17 @@ const DoctorDetails = ({ doctor }) => {
                       {
                         description?<p className="mt-5 w-3/4 font-semibold ">{description} </p> :  <p className="text-gray-900 mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit at error facere modi repellendus pariatur saepe, natus officia voluptatum expedita earum maxime debitis. Dicta quae expedita numquam aliquam omnis autem.</p>
                       }
+                        <div className="flex justify-between">
+                            <Link to="/hospital/appointment"><button className="btn btn-sm border rounded-full  bg-gray-400  text-gray-900 border-gray-400 hover:bg-gray-400 hover:border-gray-400 mt-5"> <GiHospitalCross className="mr-3"></GiHospitalCross> Hospital Visit</button></Link>
+                            <div>
+                                {
+                                    isActive === true ? <Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5"><BiVideoOff className="mr-2 text-xl"></BiVideoOff>  See Doctor Now</button></Link> : null
+                                }
+                            </div>
+                        </div>
                         
-                        {
-                            isActive === true ?<Link to="/book-appointment"><button className="btn btn-sm border rounded-full  bg-green-500  text-white border-green-500 hover:bg-green-500 hover:border-green-500 mt-5">See Doctor Now</button></Link>:null
-                        }
                     </div>
-                    {/* <Link to="/onsite-book-appointment">
-                        <button className="btn btn-sm bg-blue-500 hover:bg-blue-500 border-blue-500 hover:border-blue-500 mt-7 w-3/4 lg:w-2/4 mx-auto mb-10">Take Onsite Appointment</button>
-                    </Link> */}
+
                 </div>
             </div>
 
