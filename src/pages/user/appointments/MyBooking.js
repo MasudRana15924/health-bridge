@@ -50,7 +50,7 @@ const MyBooking = () => {
                 </div>
                 <div className="w-full m-5 lg:full lg:ml-12">
                     <h2 className="text-start lg:text-2xl ">My Consultations History</h2>
-                    <div className="w-full grid grid-cols-12 mt-5 lg:mt-10 gap-5">
+                    <div className="w-full grid grid-cols-12 mt-5 lg:mt-10 gap-2">
                         {content}
                     </div>
                 </div>

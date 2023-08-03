@@ -34,7 +34,7 @@ const OnsiteBooking = () => {
     const data = ({ doctortitle, doctorname, doctoremail, doctorfees, doctorimage, doctorId, doctordegree, doctorwork, patientname, patientemail, patientgender, phone, date, schedule, url });
     const handleCreate = (e) => {
         e.preventDefault();
-        if (patientname && patientemail && phone && date && schedule) {
+        if (patientname && phone && date && schedule) {
             dispatch(createAppointments({
                 data, userToken
             }));
@@ -157,10 +157,7 @@ const OnsiteBooking = () => {
                                 <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300">What is your Name?</p>
                                 <input type="text" value={patientname} onChange={(e) => setPname(e.target.value)} placeholder="Enter Patient Name" className="border border-gray-300 rounded lg:w-3/4 mx-auto w-full p-2 h-12" />
                             </div>
-                            <div>
-                                <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 mt-5">What is your Email?</p>
-                                <input type="text" value={patientemail} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Patient Email" className="border border-gray-200 rounded lg:w-3/4 w-full p-2 h-12 mx-auto  mb-5" />
-                            </div>
+                           
                             <div>
                                 <p className="text-start lg:w-3/4 mx-auto text-sm text-blue-300 ">What is your Phone?</p>
                                 <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter Patient Phone " className="border border-gray-200 rounded w-full lg:w-3/4 p-2 h-12 mx-auto " />

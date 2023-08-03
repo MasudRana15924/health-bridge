@@ -9,7 +9,7 @@ const MyBookings = ({ booking }) => {
         content: () => componentRef.current,
     });
     return (
-        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-6  2xl:col-span-3 ">
+        <div className="card col-span-12  md:col-span-3  gap-2 lg:col-span-6  2xl:col-span-3 ">
             <div ref={componentRef}>
                 <div className="flex">
                     <div className="">
