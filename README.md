@@ -1,70 +1,27 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Health Bridge
+Health Bridge is a digital healthcare solution using this people can solve their medical issues .
 
-## Available Scripts
+## Available Feature 
+User can book onsite appointment and see doctors through video call 
+User can order medicine from home 
+User can book nurses for their patient 
+User can find their doctors using filters 
+User can get prescription from doctors 
 
-In the project directory, you can run:
+## Technology Used
+Frontend : Reactjs , Tailwind css
+Backend : Nodejs , Mongodb 
 
-### `npm start`
+### Live site 
+https://health-bridge-4179.vercel.app/
+![Capturee](https://github.com/MasudRana15924/health-bridge/assets/125243201/1be590f8-3cb6-4c43-ba0b-f7c7caf7e037)
+![Capteeure](https://github.com/MasudRana15924/health-bridge/assets/125243201/d0a8a4e7-a2de-4648-a2f4-8ea2b1a19df8)
+![Captureeee](https://github.com/MasudRana15924/health-bridge/assets/125243201/8c8e2503-45df-4fed-8e74-46b98318802e)
+![Captueere](https://github.com/MasudRana15924/health-bridge/assets/125243201/3b9d8c7a-8cb6-4419-88fc-f44834af7bd2)
+![Capteure](https://github.com/MasudRana15924/health-bridge/assets/125243201/38ec91e1-0fd0-4fa4-bc34-0a79f90adbff)
+![Capwture](https://github.com/MasudRana15924/health-bridge/assets/125243201/6d4a0905-1f81-4477-9e4c-793c8f3388ac)
+![ww](https://github.com/MasudRana15924/health-bridge/assets/125243201/ed6dc171-806d-437f-8b22-871e19f7f20d)
+![Capwwture](https://github.com/MasudRana15924/health-bridge/assets/125243201/56f3cac5-291e-4003-b19c-f1850f6ca2e5)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
